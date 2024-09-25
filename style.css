@@ -21,8 +21,6 @@ body {
 }
 
 .main-info-container {
-    outline: solid 1px green;
-
     background-image: url("Images/Wsoft_Logo.png");
     background-size: 600px auto;
     background-repeat: no-repeat;
@@ -35,7 +33,7 @@ body {
 .main-info {
     background-color: #000000a0;
     background-blend-mode: color-burn;
-    width: 100%;
+    width: 720px;
     text-align: center;
     color:#ffffff;
     padding: 10px;
@@ -43,19 +41,19 @@ body {
 }
 
 .title {
-    font-size: 70px;
+    font-size: 77px;
     margin: 0;
     padding: 0;
 }
 
 .author {
-    font-size: 50px;
+    font-size: 55px;
     margin: 0;
     padding: 0;
 }
 
 .semester {
-    font-size: 40px;
+    font-size: 44px;
     margin: 0;
     padding: 0;
 }
@@ -69,8 +67,8 @@ body {
     gap: 10px; /* Spacing between grid items */
 }
 
-@media (max-width: 1850px) {
-    
+@media (max-width: 2100px) {
+
 
     .grid-container {
         width: 1200px;
@@ -78,17 +76,22 @@ body {
     }
 }
 
-@media (max-width: 1450px) {
+@media (max-width: 1600px) {
     .grid-container {
         width: 800px;
         grid-template-columns: repeat(2, 1fr); /* Maximum 3 columns */
     }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
     .grid-container {
         width: 400px;
         grid-template-columns: repeat(1, 1fr); /* Maximum 3 columns */
+    }
+
+    .main-info {
+        padding: 10px 0;
+        width: 100%;
     }
 
     .title {
@@ -104,10 +107,8 @@ body {
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 700px) {
     .main-info-container {
-        outline: solid 1px red;
-
         width: 100%;
         height: auto;
         background-size: 100% auto;
