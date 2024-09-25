@@ -19,10 +19,13 @@
 
 h1 {
     font-size: 60px;
+    text-decoration: underline;
+    margin-bottom: 5px;
 }
 
 p {
     font-size: 30px;
+    margin-top: 0;
 }
 
 img {
@@ -38,6 +41,10 @@ img {
     width: 100%;
     padding: 0;
     margin: 0;
+}
+
+li {
+    font-size: 30px;
 }
 
 @media (max-width: 1000px) {
@@ -63,5 +70,9 @@ img {
 
     .caption {
         font-size: 2.2vw;
+    }
+
+    li {
+        font-size: 3vw;
     }
 }
