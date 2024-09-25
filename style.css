@@ -14,31 +14,36 @@ body {
 
 .content {
     background-color: #000000a0;
-    margin: 0 100px;
+    margin: 0 10%;
     padding: 10px 10px 50px 10px;
     height: 100%;
     color: white;
 }
 
 .main-info-container {
+    outline: solid 1px green;
+
     background-image: url("Images/Wsoft_Logo.png");
     background-size: 600px auto;
     background-repeat: no-repeat;
     background-position: center;
-    height: 200px;
-    padding: 200px 10px;
+    width: 100%;
+    height: 600px;
+    display: grid;
 }
 
 .main-info {
     background-color: #000000a0;
     background-blend-mode: color-burn;
+    width: 100%;
     text-align: center;
     color:#ffffff;
     padding: 10px;
+    margin: auto;
 }
 
 .title {
-    font-size: 80px;
+    font-size: 70px;
     margin: 0;
     padding: 0;
 }
@@ -50,7 +55,7 @@ body {
 }
 
 .semester {
-    font-size: 30px;
+    font-size: 40px;
     margin: 0;
     padding: 0;
 }
@@ -65,6 +70,8 @@ body {
 }
 
 @media (max-width: 1850px) {
+    
+
     .grid-container {
         width: 1200px;
         grid-template-columns: repeat(3, 1fr); /* Maximum 3 columns */
@@ -78,43 +85,51 @@ body {
     }
 }
 
-@media (max-width: 1050px) {
-    .content {
-        margin: 50px;
-    }
-
+@media (max-width: 1000px) {
     .grid-container {
         width: 400px;
         grid-template-columns: repeat(1, 1fr); /* Maximum 3 columns */
     }
 
-    .main-info-container {
-        padding: 250px 10px;
-    }
-
-    .main-info {
-        height: 110px;
-    }
-
     .title {
-        font-size: 40px;
+        font-size: 7vw;
     }
 
     .author {
-        font-size: 30px;
+        font-size: 5vw;
     }
 
     .semester {
-        font-size: 20px;
+        font-size: 4vw;
     }
 }
+
+@media (max-width: 800px) {
+    .main-info-container {
+        outline: solid 1px red;
+
+        width: 100%;
+        height: auto;
+        background-size: 100% auto;
+        aspect-ratio: 1;
+    }
+}
+
+@media (max-width: 550px) {
+    .grid-container {
+        width: 100%;
+    }
+}
+
+
+
 
 /* Grid item styles */
 .grid-item {
     background-color: #222222;
     color: white;
     outline: solid 2px white;
-    width: 100%-20px;
+    width: 100%-40px;
     padding: 20px;
     margin: 10px 10px 10px 10px;
     text-align: left;
