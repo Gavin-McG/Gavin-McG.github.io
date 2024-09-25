@@ -1,30 +1,163 @@
-/* Define CSS variable for min-column-width */
-:root {
-    --breakpoint: 1200px; /* Customizable column width */
-    --box-width: 400px;
+html::after {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    background-color: #333333;
+    background-image: url("Images/background.jpg");
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.content {
+    background-color: #000000a0;
+    margin: 0 100px;
+    padding: 10px 10px 50px 10px;
+    height: 100%;
+    color: white;
+}
+
+.main-info-container {
+    background-image: url("Images/Wsoft_Logo.png");
+    background-size: 600px auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 200px;
+    padding: 200px 10px;
+}
+
+.main-info {
+    background-color: #000000a0;
+    background-blend-mode: color-burn;
+    text-align: center;
+    color:#ffffff;
+    padding: 10px;
+}
+
+.title {
+    font-size: 80px;
+    margin: 0;
+    padding: 0;
+}
+
+.author {
+    font-size: 50px;
+    margin: 0;
+    padding: 0;
+}
+
+.semester {
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
 }
 
 /* Grid container styles */
 .grid-container {
-    width: var(--breakpoint);
+    width: 1600px;
+    margin: auto;
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Maximum 3 columns */
+    grid-template-columns: repeat(4, 1fr); /* Maximum 3 columns */
     gap: 10px; /* Spacing between grid items */
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1850px) {
     .grid-container {
-        width: 100%;
-        grid-template-columns: repeat(auto-fit, minmax(var(--box-width), 1fr)); /* Maximum 3 columns */
+        width: 1200px;
+        grid-template-columns: repeat(3, 1fr); /* Maximum 3 columns */
+    }
+}
+
+@media (max-width: 1450px) {
+    .grid-container {
+        width: 800px;
+        grid-template-columns: repeat(2, 1fr); /* Maximum 3 columns */
+    }
+}
+
+@media (max-width: 1050px) {
+    .content {
+        margin: 50px;
+    }
+
+    .grid-container {
+        width: 400px;
+        grid-template-columns: repeat(1, 1fr); /* Maximum 3 columns */
+    }
+
+    .main-info-container {
+        padding: 250px 10px;
+    }
+
+    .main-info {
+        height: 110px;
+    }
+
+    .title {
+        font-size: 40px;
+    }
+
+    .author {
+        font-size: 30px;
+    }
+
+    .semester {
+        font-size: 20px;
     }
 }
 
 /* Grid item styles */
 .grid-item {
-    background-color: #2196F3;
+    background-color: #222222;
     color: white;
+    outline: solid 2px white;
     width: 100%-20px;
     padding: 20px;
     margin: 10px 10px 10px 10px;
-    text-align: center;
+    text-align: left;
+}
+
+.item-info {
+    width: 100%-20px;
+    margin: 0px;
+    padding: 0px;
+    background-color: #111111;
+    outline: solid 4px #333333;
+}
+
+.item-image {
+    width: 100%;
+    margin: 0px;
+}
+
+.item-date {
+    width: 100%;
+    margin: 0px;
+    padding: 10px;
+}
+
+.item-description {
+    width: 100%-20px;
+    padding: 0px 10px;
+    font-size: 20px;
+}
+
+.item-link {
+    width: 100%-20px;
+    padding: 0px 10px;
+    text-align: right;
+    float: right;
+    color: #bbbbbb;
+    font-size: 24px;
+}
+
+.item-link:hover {
+    color: white;
+}
+
+.item-link:visited {
+    color: purple;
 }
