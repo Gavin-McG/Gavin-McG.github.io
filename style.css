@@ -68,8 +68,6 @@ body {
 }
 
 @media (max-width: 2100px) {
-
-
     .grid-container {
         width: 1200px;
         grid-template-columns: repeat(3, 1fr); /* Maximum 3 columns */
