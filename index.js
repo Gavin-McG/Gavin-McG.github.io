@@ -1,4 +1,4 @@
-async function getPostData(filePath) {
+async function getJSONData(filePath) {
     try {
         const response = await fetch(filePath);
         if (!response.ok) {
@@ -37,10 +37,10 @@ class PostList extends React.Component {
         this.updatePosts = this.updatePosts.bind(this);
     }
     async updatePosts() {
-        const data = await getPostData("posts.json");
+        const data = await getJSONData("posts.json");
         const postPromises = data.postNames.map(async (name) => {
             const path = data.postDirectory + "/" + name + "/";
-            const postData = await getPostData(path + "post.json")
+            const postData = await getJSONData(path + "post.json")
             return <Post 
                 key={name} 
                 date={postData.date} 

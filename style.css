@@ -31,8 +31,8 @@ body {
 }
 
 .main-info {
-    background-color: #000000a0;
-    background-blend-mode: color-burn;
+    background-color: #424242a0;
+    background-blend-mode: add;
     width: 720px;
     text-align: center;
     color:#ffffff;
@@ -121,7 +121,14 @@ body {
 }
 
 
-
+.header {
+    font-size: 60px;
+    text-align: center;
+    width: 80%;
+    border-bottom: white solid 2px;
+    display: block;
+    margin: auto auto 10px auto;
+}
 
 /* Grid item styles */
 .grid-item {
