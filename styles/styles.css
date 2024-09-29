@@ -6,7 +6,7 @@ html::after {
 
 body {
     background-color: #333333;
-    background-image: url("Images/background.jpg");
+    background-image: url("../Images/background.jpg");
     margin: 0;
     padding: 0;
     height: 100%;
@@ -21,7 +21,7 @@ body {
 }
 
 .main-info-container {
-    background-image: url("Images/Wsoft_Logo.png");
+    background-image: url("../Images/Wsoft_Logo.png");
     background-size: 600px auto;
     background-repeat: no-repeat;
     background-position: center;
