@@ -7,7 +7,7 @@ class Heading extends React.Component {
         const timeOutput = this.props.time ? '(' + this.props.time + ')' : '';
 
         return <div className="task-heading">
-            <h1>{this.props.content}</h1>
+            <h1 dangerouslySetInnerHTML={this.props.content}></h1>
             <p className="task-time">{timeOutput}</p>
         </div>
     }
@@ -23,5 +23,5 @@ tasks.forEach((task) => {
     const content = task.innerHTML;
 
     // Replace the current content with <h1> and <p>
-    ReactDOM.render(<Heading content={content} time={time} />,task);
+    ReactDOM.render(<Heading content={{__html: content}} time={time} />,task);
 });
