@@ -1,7 +1,6 @@
 {
     "postDirectory" : "Posts",
     "postNames": [
-        "post1",
-        "template"
+        "post1"
     ]
 }

@@ -17,12 +17,6 @@
     margin: 0;
 }
 
-h1 {
-    font-size: 60px;
-    text-decoration: underline;
-    margin-bottom: 5px;
-}
-
 p {
     font-size: 30px;
     margin-top: 0;
@@ -47,6 +41,33 @@ li {
     font-size: 30px;
 }
 
+.task {
+    width: 100%;
+}
+
+.task-heading {
+    height: min-content;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: 20px 0 10px 0;
+}
+
+h1,.task-time {
+    font-size: 60px;
+    margin: 0;
+}
+
+h1 {
+    text-decoration: underline;
+    text-align: left;
+}
+
+.task-time {
+    text-align: right;
+    color: #3d6de7;
+}
+
 @media (max-width: 1000px) {
     .header {
         grid-template-columns: 1fr 5fr 1fr;
@@ -60,7 +81,7 @@ li {
         font-size: 8vw;
     }
 
-    h1 {
+    h1,.task-time {
         font-size: 6vw;
     }
 
