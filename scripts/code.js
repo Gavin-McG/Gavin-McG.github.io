@@ -17,7 +17,13 @@ class CodeBlock extends React.Component {
         super(props);
     }
     render() {
-        return <pre><code className="language-cs">{this.props.content}</code></pre>
+        const filePattern = /[^/]+$/
+        const fileName = this.props.path.match(filePattern)[0];
+
+        return <div className="code-container">
+            <p className="code-file"><a href={this.props.path}>{"Download " + fileName}</a></p>
+            <pre><code className="language-cs">{this.props.content}</code></pre>
+        </div>
     }
 }
 
@@ -28,10 +34,11 @@ let codeElements = Array.from(document.getElementsByClassName('code'));
 const promises = codeElements.map(async (element) => {
     try {
         // Fetch the content of the file specified in the href attribute
-        const codeContent = await readFile(element.getAttribute('href'));
+        const filePath = element.getAttribute('href');
+        const codeContent = await readFile(filePath);
         
         // Render the React component with the fetched content
-        ReactDOM.render(<CodeBlock content={codeContent} />, element);
+        ReactDOM.render(<CodeBlock content={codeContent} path={filePath}/>, element);
     } catch (error) {
         console.error("Error reading file:", error);
     }
