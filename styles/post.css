@@ -50,11 +50,11 @@ li {
     width: 100%;
     display: grid;
     grid-template-columns: auto auto;
-    margin: 20px 0 10px 0;
+    margin: 2vw 0 1vw 0;
 }
 
 h1,.task-time {
-    font-size: 60px;
+    font-size: 45px;
     margin: 0;
 }
 
@@ -65,7 +65,15 @@ h1 {
 
 .task-time {
     text-align: right;
+    font-family: Verdana;
     color: #3d6de7;
+}
+
+.task-total {
+    background-color: #000000;
+    padding: 0px 1.5vw;
+    border: #163e72 0.8vw solid;
+    border-radius: 2vw;
 }
 
 @media (max-width: 1000px) {
@@ -82,7 +90,7 @@ h1 {
     }
 
     h1,.task-time {
-        font-size: 6vw;
+        font-size: 4.5vw;
     }
 
     p {
