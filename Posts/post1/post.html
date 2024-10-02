@@ -63,8 +63,22 @@
             We would need to research management simulator games. I suggested a particular emphasis on 
             what makes succesful games of this genre feel entertaining rather than monotonous. We 
             decided that we would meet again later in the week to consolodate our research and establish 
-            more concrete ideas for the game's direction to bring to the next weekly meeting.
-        </p>
+            more concrete ideas for the game's direction to bring to the next weekly meeting.</p>
+
+        <div class="task" time="1.5h">Unity TileMaps</div>
+        <p>knowing that our game was more than likely going to use some form of tile-based system, I wanted
+            to make sure I was sufficienty experienced in using tilemaps. Tilemaps are not a feature of Unity 
+            that I've used in the past. Most of my past projects are 3D and never needed them. To make sure I at 
+            least knew the basics, I wanted to create a basic hexagon tilemap that used multiple tiles for a basic
+            scene. To accomplish this I created two basic sprites, a ground sprite and a water sprite, then 
+            followed along with online tutorials.</p>
+        <p>The main issue I faced was that the two different sprites I had wouldn't order correctly according to the 
+            grid's ordering system. Either all ground sprites would overlap all water sprites or visa verse, independant 
+            of grid order. As it turns out, this was a result of the two sprites I used being from seperate textures. 
+            Once the two sprites were combined into a single texture then sliced into seperate sprites the ordering 
+            issues resolved themselves.</p>
+        <img src="Images/HexMapImage.png"></img>
+        <p class="caption">Completed Basic Scene using a Unity tilemap.</p>
 
         <div class="task-total"></div>
     </div>
