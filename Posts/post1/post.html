@@ -52,7 +52,7 @@
             succesful.</p>
 
         <div class="task" time="1h">R&D Meeting (9/30/24)</div>
-        <p>Our R&D group met on a discord call to establish the genre for the bame we would be 
+        <p>Our R&D group met on a discord call to establish the genre for the game we would be 
             developing. The main ideas we discussed were platformer, fighting game, and management 
             simulator. We decided against platformer, as Wolverinesoft Studio had very recently 
             created a platformer game. During the previous weekly meeting Connor and I had tossed around the 
@@ -79,6 +79,21 @@
             issues resolved themselves.</p>
         <img src="Images/HexMapImage.png"></img>
         <p class="caption">Completed Basic Scene using a Unity tilemap.</p>
+
+        <div class="task" time="30m">TileMap Script Editing</div>
+        <p>Once I knew how to create and use tilemaps in the editor, I wanted to ensure I knew how to modify them via 
+            scripts. I wanted to use scripts to create two lines of tiles along the x and y directions. This would help
+            to teach me to use tilemaps in scripts and demonstrate how a tilemap's coordinate system works in a hex grid.
+            I briefly skimmed the Unity documentation and found TileMap.SetTile() would be the best option to accomplish this. 
+            I immediatly ran into issues creating the script, as my IDE refused to recognise the TileMap object. After a brief
+            search I founf it was because I needed to manually include the UnityEngine.TileMap library. Once that was done it was as simple
+            as creating a simple for loop.</p>
+        <div class="code" href="Scripts/HexGrid.cs"></div>
+        <p>The x coordinate was exactly as I would have expected, being straight across. The y coordinate was more interesting, 
+            zagging from side to side along the axis. If we do go along with the idea of a hex grid in our final project I will 
+            need to be sure to keep aware of this when adding new features.</p>
+        <img src="Images/HexMapScripted.png"></img>
+        <p class="caption">Altered tilemap resulting from script</p> 
 
         <div class="task-total"></div>
     </div>
