@@ -109,6 +109,29 @@
             by preventing the gameplay from feeling monotonous or reptetive. It allows the player, once they're comfortable, to move onto new techniques and 
             strategies to feel a continuous sense of learning and accomplishment. To add onto this, most games seem to make mistakes very easily reverable
             to encourage this learning process.</p>
+        
+        <div class="task" time="2h">Stylized Water Shader</div>
+        <p>Even if we as a group haven't yet decided exactly what sortof game we're going
+            to make, it's a safe bet that there will be water in the game. For that reason I
+            wanted to get a head start in creating a water shader that could be used in our game. 
+            Aside from just looking like water, a proper water shader would need to be able to 
+            change over time. Before jumping right into HLSL code, I begin "drafting" the shader 
+            using Blender's shader editor. I ended up with a result very close to what I was imagining.</p>
+        <img src="Images/BlenderWater.png"></img>
+        <p class="caption">Draft of shader in Blender</p>
+        <p>Next I needed to adapt this shader over to Unity. This was easier said than done, though 
+            as the Blender shader required the use of a Voronoi texture. As far as I'm aware, Unity nor 
+            HLSL have any sort of built in voronoi texture. Instead, I attemped to use a simple version 
+            of the function I found online. The Blender shader uses both F1 and smooth F1 voronoi. Unfortunately, 
+            the smoothmin function I used for smooth F1 didn't accurately replicate Blender's Smooth F1 texture.</p>
+        <p>With some more research I was able to find a repository of the code used by Blender. Once I found the 
+            function used by the voronoi shader node I just had to adapt it from C++ to HLSL. There were some 
+            utility functions I had to find online aswell, such as smoothstep and mix. With the voronoi textures 
+            implimented all I had left to do was replicate the rest of the shader graph in HLSL, which was a fairly 
+            easy task.</p>
+        <img src="Images/UnityWater.png"></img>
+        <p class="caption">Finished stylized water shader</p>
+        <div class="code" href="Scripts/VoronoiShader.shader"></div>
 
         <div class="task-total"></div>
     </div>
