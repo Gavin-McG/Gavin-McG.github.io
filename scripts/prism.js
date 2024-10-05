@@ -462,7 +462,7 @@ Prism.languages.clike = {
     return e.replace(/<<self>>/g, "[^\\s\\S]");
   }
   var t =
-      "bool byte char decimal double dynamic float int long object sbyte short string uint ulong ushort var void",
+      "bool byte char decimal double dynamic float float2 float3 float4 fixed4 int long object sbyte short string uint ulong ushort var void",
     r = "class enum interface record struct",
     i =
       "add alias and ascending async await by descending from(?=\\s*(?:\\w|$)) get global group into init(?=\\s*;) join let nameof not notnull on or orderby partial remove select set unmanaged value when where with(?=\\s*{)",
@@ -609,7 +609,7 @@ Prism.languages.clike = {
         inside: {
           directive: {
             pattern:
-              /(#)\b(?:define|elif|else|endif|endregion|error|if|line|nullable|pragma|region|undef|warning)\b/,
+              /(#)\b(?:define|elif|else|endif|endregion|error|if|line|nullable|pragma|include|region|undef|warning)\b/,
             lookbehind: !0,
             alias: "keyword",
           },

@@ -19,7 +19,7 @@ Shader "Custom/VoronoiShader"
             #include "UnityCG.cginc"
 
             float _XScale;
-    float _YScale;
+            float _YScale;
             float _TimeScale;
             float _Threshold;
             float _Randomness;
