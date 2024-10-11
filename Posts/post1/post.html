@@ -173,6 +173,31 @@
         <p class="caption">succesful result of placing tiles along each coordinate dimention</p>
         <div class="code" href="Scripts/HexUtils.cs"></div>
 
+        <div class="task" time="8h">Building System</div>
+        <p>>Constructing the building system was my major task for this cycle. Getting this system in place would be vital 
+            before we could move onto more involved game system. The goals for thus system was to be able to place buildings,
+            delete buildings, and create a system where other scripts would convieniently be able to retrieve information of 
+            what buildings were in place. In the future I could add options to move buildings, but this was not a priority. I
+            also wanted to have support for multiple-tile buildings</p>
+        <p>I decided to start by establishing out the layers that would be needed for the game's tilemap. The three layers I 
+            decided on was the ground layer, the object layer, and the preview layer. The ground layer would store the terrain
+            tiles. The object layer would store building tiles or other environmental features. The preview layer would be used 
+            for previewing buildings to be placed or any other use we can make of it later.</p>
+        <p>To establish how the building system would work, I had to decide how to determine whether a given tile was "valid". 
+            I decided that each tile would either have a label "Full" or "Empty". A valid tile to place a building would have to 
+            have a "Full" tile in the ground layer and an "empty" tile in the object layer.</p>
+        <p>I began by trying to figure out how to label each tile with a respective "Full" or "Empty" label. I tried to
+            create a ScriptableObject That would group tiles with their respective labels, and the build system would use these objects to 
+            access tiles. I found this option to be very bloated, requiring two objects in the project files for each tile and 
+            complicating the code. Instead, I created a customTile class which extends from Tile this stores this label value. 
+            I changed all the existing tiles to this CustomTile object.</p>
+        <div class="code" href="Scripts/CustomTile.cs"></div>
+        <p>Next, I created a Structure object. The structure object stores either one or a set of tiles to describe the tiles 
+            that make up a building. Each structure also has a label for type of building. Each tile within the Structure was 
+            contained in a StructurePiece struct which would also store the relative coordinate to the building's center.</p>
+        <div class="code" href="Scripts/Structure.cs"></div>
+        <p>{WIP}</p>
+
         <div class="task-total"></div>
     </div>
 </body> 
