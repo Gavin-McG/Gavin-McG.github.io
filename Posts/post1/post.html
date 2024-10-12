@@ -196,7 +196,28 @@
             that make up a building. Each structure also has a label for type of building. Each tile within the Structure was 
             contained in a StructurePiece struct which would also store the relative coordinate to the building's center.</p>
         <div class="code" href="Scripts/Structure.cs"></div>
-        <p>{WIP}</p>
+        <p>The bulk of the actual building process is controlled by a script I named BuildingManager. This script contains an 
+            enumerator for the current editing mode and a structure for the actively selected building. It also contains several 
+            other parameters used primarily for color options. Aside from just placing the necessary tiles in the correct positions 
+            the building manager also needed to track what tiles correspond to what building. For this I created three different 
+            dictionaries. One tracks a tile's coordinate to the building that is one it, the second contains a list of tiles 
+            that each building covers, and the last tracks a list of buildings for each building type. The building type dictionary 
+            isn't needed for this script, but would likely be useful in the future.</p>
+        <p>Conner Spears had previously created a system for highlighting the tile the mouse was hovering over. I moved the functionality 
+            of that script into the BuildingManager script as part of the building system. I also improved it so that an entire 
+            building was highlighted when hovered over as opposed to one tile. The final feature I added were Unity events to make it 
+            simpler for UI and control scripts to interact seamlessly with the building system.</p>
+        <img src="Images/BuildingSystem.png"></img>
+        <p class="caption">Image of the building system, with a multi-tile building being previewed in green</p>
+        <div class="code" href="Scripts/BuildingManager.cs"></div>
+
+        <div class="task" time="1.5h">Documentation</div>
+        <p>To finish off this sprint I created documentation for the code I had made so far. This documentation included the functions 
+            and purposes of the BuildingManager, Structure, Building, and CustomTile scripts. It also included background information and
+            recommended practice when interacting with coordinate systems and creating new buildings and tiles. I used chatgpt to aid in 
+            describing the parameters and return values of each of the functions.</p>
+        <img src="Images/ProgrammingDocumentation.png"></img>
+        <p class="caption">Image of the Building Manager script in the documentation</p>
 
         <div class="task-total"></div>
     </div>
