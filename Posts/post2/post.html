@@ -37,11 +37,69 @@
             </a>
             <h2 class="header-text">Blog Template</h2>
         </div>
-        <!--Content starts here-->
 
+            <div class="task" time="1.5h">R&D Meeting 10/13/24</div>
+            <p>Due to fall break we didn't have any studio meeting this week. Instead our group decided
+                to have our own meeting. The first 30 minutes or so of the meeting we just had Connor and
+                myself present. We used the opportunity to catch him up on how the building system I had 
+                made worked and tell him what each script was for. He also showed me some of the UI which 
+                he had made, which included a dropdown for editing mode and an option to select which structure
+                to place.</p>
+            <p>Once Nadav arrived we moved on to talking about non-programming topics. We decided we would meet 
+                again later this week to work on the slideshow we would present at the next studio meeting. The R&D
+                groups were to make these presentations to show out progress and direction going further. We also 
+                talked about a timeline for art assets and what the requirments would be to be able to properly 
+                impliment them in the current system.</p>
+            <p>Finally, we established what our tasks would be for this week, aside from creating the slideshow. 
+                Nadav would begin working on art for the game. We decided the first priority for art should be to 
+                create one image for each building type. I would be working on implimenting environmental features 
+                such as trees or rocks. I would also be starting on creating a simple economy/resource system. Connor 
+                will be working more on UI.</p>
+
+            <div class="task" time="4h">Building System Tweaks</div>
+            <p>After implimenting the Building System I realized there were some other additions and changes I felt I 
+                should make. The first thing I wanted to do was add functions to make interacting with the building 
+                from other scripts cleaner and more convenient. I figured making them interact directly with the dictionaries 
+                could make the code messier. I added functions like GetBuilding, getBuildingCoords, GetBuildingTiles, and 
+                GetBuildingsOfType. I then changed other methods to use these functions where applicable and made functions 
+                and properties that other scripts shouldn't be using private.</p>
+            <p>Another change I wanted to make was to make the highlighting of building white. unfortunately, you can't
+                make the color of tiles brighter by default, as a color white correlates to the original color of the 
+                sprite. Instead, I had to create a custom sprite shader that would treat the alpha channel as a brightening 
+                factor only when the "None" editing mode was selected using shader keywords. I started off by finding Unity's default 
+                sprite shader code online and built off of that. I ran into some issues getting the sprite 
+                alpha to work seperatly from the color alpha, but managed to get it working with some trial and error.</p>
+            <div class="code" href="Scripts/UnitySpritesCustom.cginc"></div>
+            <img src="Images/SelectionHighlight.png"></img>
+            <p class="caption">Image showing the new white highlighting using the custom sprite shader.</p>
+            <p>A change Connor suggested in our previous meeting was to make it so the building preview only showed when the 
+                cursor was over land. I added the IsGroundTile method for this purpose. I also made it so the placing and deletion 
+                of buildings was controled by an event rather than by directly reading the mouse input. This would make it easier to 
+                prevent clicks on the UI from accidentally placing or deleting a building in the future.</p>
+            <p>I finished up my changes by grouping several sections of repeated code into methods such as ColorTile and ClearPreview. 
+                I moved the content of the update function into its own method. Finally, I added two new events to represent when the 
+                placing of a building or deletion of a building fails, likely to be used for audio effects later on.</p>
+            <div class="code" href="Scripts/BuildingManager.cs"></div>
+
+            <div class="task" time="2h">Camera Control System</div>
+            <p>The next thing I worked on was a CameraManager script. The goal of this script would be to control the camera with
+                the mouse, allowing the user to navigate the world. I decided that for my ideal implimentation I would need to have three 
+                states: one for when the mouse was not being held, one for when it was held but could still end up being either a click or a 
+                drag motion, and a final state for when the mouse was held and being dragged. I stored these states in an enumerator.</p>
+            <p>I implimented the functionality of all three states in their own respective methods. I made it so the camera would move when 
+                the mouse was being dragged. I added this such that the mouse would appear to stay in the same world position so that it would 
+                feel like the user was actually dragging the world around. This meant the rate of motion would have to scale with the camera size, 
+                which required some searching through the Unity documentation to find the right values to use.</p>
+            <p>Next I made it so that using the scroll wheel would shrink or grow the camera's size. Reading the delta of the scroll wheel was 
+                easy, but I noticed the natural behavior of the scroll wheel seems very choppy. Instead, I stored the altered camera size in a 
+                seperate variable as a "goal size". The actual size of the camera would approach this value using an exponential decay function, 
+                making the process of zooming in and out feel much smoother. Finally, I made it so that the zooming process was centered on the 
+                location of the mouse pointer. The exact math to get this to work by changing the position of the camera during zooming took some 
+                tinkering but didn't end up being too difficult.</p>
+            <img src="Images/CameraZoom.png"></img>
+            <p class="caption">Image of the camera zoomed out and moved from the center.</p>
+            <div class="code" href="Scripts/CameraManager.cs"></div>
         
-
-        <!--Content ends here-->
         <div class="task-total"></div>
     </div>
 </body>
