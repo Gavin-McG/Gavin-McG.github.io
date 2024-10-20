@@ -99,7 +99,58 @@
             <img src="Images/CameraZoom.png"></img>
             <p class="caption">Image of the camera zoomed out and moved from the center.</p>
             <div class="code" href="Scripts/CameraManager.cs"></div>
-        
+
+            <div class="task" time="3h">Resource System</div>
+            <p>Next I felt it was best to finish up the resource system. This would make it easier to figure out ideal game mechanics and details
+                of the game economy as we go forwards. I figured I'd start out with just three different Resources: Magic, Wood, Stone. Later we might 
+                add population as a "resource" or make certain resources function differently from one another, but for now they would function regularly
+                as a currency.</p>
+            <p>First I created a Resources struct to store information about resources. Containing all the logic of charging and resource exchanges within
+                the operators of this class would make it much easier to make changes or additions quickly later on. There were several operators I also 
+                defined such as the <, >, <=, and >= operators which would effectively compare whether a given value could afford a given cost. There were 
+                some opertations that likely wouldn't need to be used, but I implimented them anyways for the sake of functional completeness.</p>
+            <div class="code" href="Scripts/Resources.cs"></div>
+            <p>Next I created a ReasourceManager script to be attached to the GameManager. This script would store the user's current resources and
+                interface with the BuildingManager. For this system to work cleanly I made some changes to how the structures and Buildings work. 
+                Instead of having the BuildingManager retrieve the building from the GetBuilding function, I made the buildings be components attached to 
+                prefabs. This way, the structure could just store a reference to the Building's prefab and be instantiated that way. Once this change was made 
+                I had each building have a building cost, which would be checked against the user's resources whenever a building was placed.</p>
+            <div class="code" href="Scripts/ResourceManager.cs"></div>
+            <p>To finish off the resource system for now, I created a simple UI which displays the user's current Magic, Stone, and Wood amounts. I created
+                sprites for each UI field, likely to serve as placeholders. I also stole the wood sprite from a previous project of mine. I craeted a simple 
+                script which would set the numbers beside each sprite to the user's current amount of its respective resource from the ResourceManager. As of
+                now, it is set to update every frame. I might change this later to wait for an event associated with a change in resources, but for now this is 
+                acceptable.</p>
+            <img src="Images/ResourceUI.png"></img>
+            <p class="caption">Simple resource UI showing current resource values.</p>
+
+            <div class="task" time="1.5h">R&D Meeting 10/18/24</div>
+            <p>Our R&D team met up several days before the next team meeting. During the next team meeting each group would be expected to create a presentation.
+                This presentation would include progress we've made, what the general idea of the game is, and what we hope to complete within the scope of this
+                semester. We worked on a slideshow that we would present during that meeting. We divided into three sections: design concepts/ideas, art progress 
+                and inspirations, and progamming progress and challenges.</p>
+            <img src="Images/PresentationImage.png"></img>
+            <p class="caption">Example slide from out presentation</p>
+
+            <div class="task" time="2h">MORE Building System Tweaks</div>
+            <p>There were several other features that needed to added to the building system. I knew both these features would be quick and easy to add, so I 
+                decided to get them out of the way. First, I wanted to make some buildings indestructible. This would be necessary for preventing the player from 
+                destroying their main tower or other buildings associated with questing. All I needed to do was add a "canDestroy" property to the buildings which 
+                the Building Manager would check for before allowing the destruction of a building.</p>
+            <p>Next I added a refund for destroying building. This refund adds a configurable portion of a building's cost back to the user's resources when a building is 
+                succesfully destroyed. Finally, I wanted the building system to indicate when a building couldn't be afforded. To accomplish this the building preview checks
+                whether the selcted building can be aforded and changes the highlight color accordingly. For now this color is set to orange.</p>
+            <img src="Images/OrangeHighlight.png"></img>
+            <p class="caption">Building Highlghted orange when it is too expensive</p>
+            <div class="code" href="Scripts/BuildingManager(1).cs"></div>
+
+            <div class="task" time="2h">Weekly Meeting #3</div>
+            <p>As previously mentioned, this meeting would include presentations from each group. This includes both R&D groups and the main project SandCastle 
+                group. Our presntation went smoothly and covered most of the information we wanted. We also answered some questions regarding narative and scope, 
+                which might mean we should more strongly establish these aspects of our game on our own. The other R&D team is creating a 2.5D PvE sidescroller and 
+                project Sandcastle made progress on their enemy spawning system and building/walls.</p>
+            <p>After the presentations were complete the last 30 minutes of the meeting were dedicated to work time within our groups.</p>
+
         <div class="task-total"></div>
     </div>
 </body>
