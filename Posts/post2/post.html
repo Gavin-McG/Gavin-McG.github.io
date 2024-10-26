@@ -200,7 +200,7 @@
         groups.
       </p>
 
-      <div class="task" time="7h">Pathfinding</div>
+      <div class="task" time="9h">Pathfinding</div>
       <p>
         To make the world feel more alive, we'll want characters that can run around in the world. The current plan is
         to have these characters Be in a chibi and cartoonish artstyle. Regardless, we'd still need some form of
@@ -244,46 +244,78 @@
       <div class="code" href="Scripts/HexAStar.cs"></div>
       <p>
         Once that was finished I threw together another script to test that everything was working properly and generate
-        a path between two random points of my choosing. Fortunetly I didn't run into any major bugs and just about
-        everything worked right away with the exception of one == that needed to be a != which had allowed that path to
-        pass through buildings.
+        a path between two points of my choosing. I instantiated points along the path just to verify that the path that
+        was being chosen was what seemed to be the most optimal path. I ran several test, including testing the effect
+        of placing new buildings in the way, paths through trees, and paths around water.
       </p>
-      <img src="Images/PathfindingTest.png">
+      <img src="Images/PathfindingTest.png" />
       <p class="caption">Visualization of path generated between two points.</p>
+      <p>
+        Fortunetly I didn't run into many major issues and just about everything worked right away with the exception of
+        two bugs I identified. One == that needed to be a != which had allowed the path to pass through buildings, and a
+        fix to the CompareTo function which was actually broken in the original implimentation which caused some valid
+        paths to be skipped. In debugging these issues I used Unity's drawline functions to visualize the edges the
+        pathfinding algorithm was searching. Once these issues were resolved everything was fnctioning as intended.
+      </p>
+      <img src="Images/PathfindingDebugging.png" />
+      <p class="caption">Screenshot taken mid-debugging process showing Visualization of edges.</p>
 
       <div class="task" time="1.5h">R&D Meeting 10/22/24</div>
       <p>
-        Because we didn't spend most of out time in the previous weekly meeting wrapping up our individual tasks we 
-        didn't end up discussing what our next tasks would be. I took the opportunity to show them the pathfinding 
-        system and Connor showed us the new UI he had made for the building system. We decided that I would focus on 
-        laying out the foundation for the quest/adventure system, Connor would work on some building specific UI and 
+        Because we didn't spend most of out time in the previous weekly meeting wrapping up our individual tasks we
+        didn't end up discussing what our next tasks would be. I took the opportunity to show them the pathfinding
+        system and Connor showed us the new UI he had made for the building system. We decided that I would focus on
+        laying out the foundation for the quest/adventure system, Connor would work on some building specific UI and
         design/game balance documentation, and Nadav would work of wrapping up the main building art soon.
       </p>
       <p>
         Seeing as my next task would be the quest system, we took some time to establish exactly how this system would
-        work. What we decided is that players would use the Tavern building to recruit adventuerers to form a party. 
-        Each adventuerer would have a set of stats that would determine the strength of the party and the success rate 
-        of the adventure in turn. There will be dungeon entrances placed in the world which the adventerers will travel 
+        work. What we decided is that players would use the Tavern building to recruit adventuerers to form a party.
+        Each adventuerer would have a set of stats that would determine the strength of the party and the success rate
+        of the adventure in turn. There will be dungeon entrances placed in the world which the adventurers will travel
         to before entering the dungeon.
       </p>
 
       <div class="task" time="2h">EVEN MORE Building System Tweaks</div>
       <p>
-        As mentioned in the previous section, the dungeon entrances would be placed throughout the world. This would 
+        As mentioned in the previous section, the dungeon entrances would be placed throughout the world. This would
         require some way of having buildings be in the world on startup, which there currently was no system for. How I
-        chose to impliment this was to create a new type of tile called BuildingSpawnTile. Each variant of this tile 
-        would store a building. In the Start method the building manager scans the map for these tiles and places the 
+        chose to impliment this was to create a new type of tile called BuildingSpawnTile. Each variant of this tile
+        would store a building. In the Start method the building manager scans the map for these tiles and places the
         Buildings they store in the world.
       </p>
       <p>
-        If you've been paying attention to the BuildingManager.cs script which has popped up several times, you might 
-        have noticed it is long. VERY long. almost 700 lines, in fact. This being larger than I'd prefer, I decided to 
-        split its functionality into 2 scripts, moving all functions and methods related to previewing buildings or 
-        highlighting buildings into the PreviewManager.cs script. BuildingManager remains a long script, but it's much 
+        If you've been paying attention to the BuildingManager.cs script which has popped up several times, you might
+        have noticed it is long. VERY long. almost 700 lines, in fact. This being larger than I'd prefer, I decided to
+        split its functionality into 2 scripts, moving all functions and methods related to previewing buildings or
+        highlighting buildings into the PreviewManager.cs script. BuildingManager remains a long script, but it's much
         more manageable now.
       </p>
       <div class="code" href="Scripts/BuildingManager(2).cs"></div>
       <div class="code" href="Scripts/PreviewManager.cs"></div>
+
+      <div class="task" time="2.5h">Beginning the Quest System</div>
+      <p>
+        One system which would be a central focus of the game's progression would be the quest system. Out current
+        cncept of this system would have the player hire adventuerers and send them out on quests. Each adevnturer will
+        have its own stats which contribute to an overall party strength which determines the success of the quest. The
+        quests will likely consist of several dungein entrances scattered in the world.
+      </p>
+      <p>
+        The Tavern will be the building where the player can interact with the process of hiring heroes. The level of
+        the tavern determines the average quality of heroes that are for hire. Once the player has a team they'll be
+        able to send them out to a dungeon. The adventuerers that were hired will appear in the world and use the
+        pathfinding system to navigate to the dungeon entrance. Once there, the quest can be started. That's the current
+        plan, anyway.
+      </p>
+      <p>
+        To start the process of developing this system I wanted to impliment the application of the pathfinding system
+        first whilst it was fresh in my mind. I created some placeholder assets to be used for the adventuerer. Then I
+        created a script that would recieve a set of coordinate points from a PartyManager script that will be
+        implimented later. This script will move the adventerer from point to point at a constant rate before removing
+        the adventerer once it reaches its destination and inidcating as such back to the PartyManager.
+      </p>
+      <div class="code" href="Scripts/WalkingAdventurer.cs"></div>
 
       <div class="task-total"></div>
     </div>
