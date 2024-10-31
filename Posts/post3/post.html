@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog Post</title>
-    
+
     <!--tab icon-->
-    <link rel='icon' href='../../Images/favicon.ico' type='image/x-icon' />
+    <link rel="icon" href="../../Images/favicon.ico" type="image/x-icon" />
 
     <!-- Include React and ReactDOM via CDN -->
     <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
@@ -22,26 +22,52 @@
     <script type="text/babel" src="../../scripts/post.js"></script>
 
     <!--style sheets-->
-    <link rel="stylesheet" href="../../styles/styles.css">
-    <link rel="stylesheet" href="../../styles/post.css">
+    <link rel="stylesheet" href="../../styles/styles.css" />
+    <link rel="stylesheet" href="../../styles/post.css" />
 
     <!--prism import-->
     <script src="../../scripts/prism.js"></script>
     <link href="../../styles/code.css" rel="stylesheet" />
-</head>
-<body>
+  </head>
+  <body>
     <div class="content">
-        <div class="header">
-            <a href="../../index.html">
-                <img class="header-logo" src="../../Images/Wsoft_Logo_mini.png">
-            </a>
-            <h2 class="header-text">Blog Template</h2>
-        </div>
-        <!--Content starts here-->
+      <div class="header">
+        <a href="../../index.html">
+          <img class="header-logo" src="../../Images/Wsoft_Logo_mini.png" />
+        </a>
+        <h2 class="header-text">Blog Template</h2>
+      </div>
+      <!--Content starts here-->
 
-        
+      <div class="task" time="3h">Party Manager</div>
+      <p>
+        One of the core components of the Quest system will be the Party Manager. This script manages the adventurers
+        that the players have hired and contains the logic for sending them on quests, hiring new adventurers, and
+        create new randomly generated adventurers. While most of the functions of this script will be dictated through
+        UI that will be created later, the underlying logic can be designed now.
+      </p>
+      <p>
+        First I created an Adventurer script which contains the adventurer class and several enumerators to represent
+        different forms of information about the adventurer. The adventurerInfo is a scriptableObject which groups the
+        face asset for the UI, the body asset for when the adventurer is travelling through the world, and the class of
+        the adventurer so the art of each adventurer can be designed around a specific class.
+      </p>
+      <div class="code" href="Scripts/Adventurer.cs"></div>
+      <p>
+        The PartyManager manages an array of 4 adventurers. It provides public scripts for the Tavern to hire new
+        adventurers and provides methods to dispatch the party to a dungeon of a specific name. It also stores many
+        values I'd like to share between different UI pages such as the the colors. Something I'd like to note is that
+        the version of the PartyManager script below is not how it was first written, but has been altered throughout
+        the process of the UI design which I will describe later.
+      </p>
+      <div class="code" href="Scripts/PartyManager.cs"></div>
 
-        <!--Content ends here-->
-        <div class="task-total"></div>
+      <div class="task" time="5h">Tavern UI</div>
+
+      <div class="task" time="4h">Dungeon UI</div>
+
+      <!--Content ends here-->
+      <div class="task-total"></div>
     </div>
-</body>
+  </body>
+</html>
