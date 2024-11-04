@@ -39,6 +39,15 @@
       </div>
       <!--Content starts here-->
 
+      <div class="task" time="2h">Weekly Meeting #4</div>
+      <p>
+        Nadav couldn't be present for this meeting, which worked out as there wasn't very much we needed to do in
+        particular for this week's meet. After the basic weekly announcements and catching up with the main project
+        Sandcastle group, Connor and I found a spot to work on the project. We spent some time going over each of our
+        contributions to the project and programming decisions and implementations for out respective features so we
+        were both up-to-date with the code.
+      </p>
+
       <div class="task" time="3h">Party Manager</div>
       <p>
         One of the core components of the Quest system will be the Party Manager. This script manages the adventurers
@@ -62,9 +71,105 @@
       </p>
       <div class="code" href="Scripts/PartyManager.cs"></div>
 
-      <div class="task" time="5h">Tavern UI</div>
+      <div class="task" time="4h">Tavern UI</div>
+      <p>
+        The Tavern UI would be responsible for hiring new adventurers, displaying the stats, class, and condition of
+        each advneturer, and commanding the party of adventurers where to go. First, I worked on The design of the UI.
+        Making this UI look clean and fit all the information I wanted took a lot of trial nd error. I also made several
+        components of the UI have their own scripts and prefabs to make programming and getting UI element references
+        much simpler later on.
+      </p>
+      <img src="Images/TavernUI.png" />
+      <p class="caption">Example Image of Tavern UI (post-implementation)</p>
+      <p>
+        Another UI menu is also needed to provide a selection of adventurers for the player to choose from. Many of the
+        components and scripts that were used for the Tavern UI could be copied and adapted for the Hiring UI fairly
+        quickly. This UI recieved 4 randomly generated adventurers from the PartyManager on game startup and after a new
+        adventurer is hired. That way the player cannot just refresh the page over and over again to get the perfect
+        result, and has to make strategic compromises more often.
+      </p>
+      <img src="Images/HiringUI.png" />
+      <p class="caption">Example Image of Hiring UI (post-implementation)</p>
 
-      <div class="task" time="4h">Dungeon UI</div>
+      <div class="task" time="1h">R&D Meeting 10/29/24</div>
+      <p>
+        Because we didn't have all members present on the previous meeting, we set up this meeting to catch up. We each
+        showed some of out progress from the previous week. We also discussed what out next tasks would be going
+        forward. Given that I still had much work to do for the quest system I would just work on finishing this task.
+        Connor Spears would work on adding a basic prefab for each of the building and implementing basic resource
+        generation. Nadav would work on finishing more of the building art and design. We also established a time later
+        that same week to work on a slide show for the next weekly meeting to present. We didn't do this at this time
+        becaause we wanted more to show for out progress.
+      </p>
+
+      <div class="task" time="2h">Dungeon UI</div>
+      <p>
+        The dungeon UI requires two main components, the adventurer displays and the battle information. Unlike withthe
+        Tavern UI, I couldn't just copy the UI compoennts for this, as the UI format would have to be slightly different
+        in order to allocate enough space to the health bar and battle information whilst letting the text be large and
+        legible. I changed the stats to be vertical and removed the text for each one, as this specific information was
+        less relevant for the Dungeon UI.
+      </p>
+      <img src="Images/DungeonUI.png" />
+      <p class="caption">Example Image of Dungeon UI (post-implementation)</p>
+
+      <div class="task" time="4h">Dungeon Battles</div>
+      <p>
+        With all the UI's implemented, it was finally time to make the player actually be able to fight the dungeons.
+        For now, I created a method in the PartyManager script to caluclate a "party score". This method adds and
+        multiplies the party members' stats in such a way that encourages party balance in both class and stats.
+        Fighting a dungeon consists of repeated skill checks, comparing the party score to a dungeons difficulty, being
+        more likely of success when the party score is higher. For the exact probability I used a normal distribution.
+      </p>
+      <div class="code" href="Scripts/PartyCheck.cs"></div>
+      <p>
+        For now, the text output from the battles just uses placeholder messages. Getting unique and interesting
+        messages in here like, "{name} was struck by Goblin for 9 damage", would be ideal, but isn't a priority given
+        the time restraints of this project. The specfic rewards a dungneon grants should also be customizable later on,
+        but for now it just gives 200-400 gold at random and 1 fossil. This is still significant, though, as it
+        represents the first way to get fossils, the main form of progression through the game.
+      </p>
+      <img src="Images/BattleImage.png" />
+      <p class="caption">The player mid-battle, showing 1 adventurer dead and a progress bar</p>
+      <p>
+        Most of these methods and functionality were placed into the PartManager script. This script has become rather
+        large at this point, being almost 600 lines long. At some point I might split the functionality into 2 scripts,
+        being the PartyManager and potentially a BattleManager. For now I'd rather focus on bug fixes and finishing all
+        the features we want to have by the end of semester.
+      </p>
+      <div class="code" href="Scripts/PartyManager(1).cs"></div>
+
+      <div class="task" time="2h">R&D Meeting 11/2/24</div>
+      <p>
+        We met the day before the next weekly meeting to create the slideshow we would be expected to show. We each had
+        our own sections respectively for what we had accomplished since the last presentation 2 weeks ago and another
+        for what we hoped to accomplish with te project before the project deadline. Between these two sections of the
+        presentation we included a live demo of the current project.
+      </p>
+      <img src="Images/Slideshow.png" />
+      <p class="caption">Screenshot of the Slideshow</p>
+
+      <div class="task" time="2h">Weekly Meeting #5</div>
+      <p>
+        This meeting began with the presentation from each group. The other R&D group presented first. They made a lot
+        of progress with their enemy attacks and attack indicators, including 3 different enemies and 1 boss fight.
+        Connor Chen showed the progress of project Sandcastle, which included interesting battle controls for the
+        players troops, buildable walls, and really impressive animations.
+      </p>
+      <p>
+        Our own presentation went well. We each were present to explain our own sections of the slideshow. I directed
+        the demo of our project, which mostly focused on the quest and battle system I had made. I also showed the
+        resource production Connor Spears had implemented. We got several question regarding future gae direction
+        regarding the game ecomony that suggested several interesting ideas we might consider.
+      </p>
+      <p>
+        We also got the opportunity to playtest the game in its current state with several fellow studio members. It was
+        interesting seeing people first impression on the game and seeing what came intuitively and what didn't. It also
+        revealed several small bugs, which should fortunetly be fairly easy to fix. I made sure to take notes on things
+        I noticed about ehir experinced and comments they made regarding their own experience.
+      </p>
+      <img src="Images/PlayTestNotes.png" />
+      <p class="caption">Notes taken during the brief playtesting session.</p>
 
       <!--Content ends here-->
       <div class="task-total"></div>
