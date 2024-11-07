@@ -166,10 +166,44 @@
         We also got the opportunity to playtest the game in its current state with several fellow studio members. It was
         interesting seeing people first impression on the game and seeing what came intuitively and what didn't. It also
         revealed several small bugs, which should fortunetly be fairly easy to fix. I made sure to take notes on things
-        I noticed about ehir experinced and comments they made regarding their own experience.
+        I noticed about their experinced and comments they made regarding their own experience.
       </p>
       <img src="Images/PlayTestNotes.png" />
       <p class="caption">Notes taken during the brief playtesting session.</p>
+
+      <div class="task" time="1h">Bug Fixes</div>
+      <p>
+        As mentioned, the brief playtesting revealed several small bugs. I took some time to try and resolve these
+        issues. The first thing was that the player was able to destroy the dungeons using the building controls. This
+        was a very easy fix, only requiring a bool in the inspector menu to be set. Another issue that was as easily
+        resolved were some buildings still having the default description in the building menu.
+      </p>
+      <p>
+        The last issue was the tavern UI would break when attempting to dispatch a party of no members. This issue
+        required some changing the code, but was overall an easy issue, only requiring a simple check for number of
+        adventurers on button click. I did take the opportunity to clean up the code a bit, grouping several repeated
+        checks into their own functions such as AdventurerCount, CanHire, CanDispatch, CanFight, and CanReturn. These
+        functions made the code much more compact and readable.
+      </p>
+      <div class="code" href="Scripts/PartyManager(2).cs"></div>
+
+      <div class="task" time="2.5h">Town Range</div>
+      <p>
+        To make sure the player can't juts place buildings wherever they please throughout the world, we're going to use
+        a system to limit the a range of the town. The town would be limited by the main tower in the center of the
+        town. Then, the player will be able to place Wizard towers to extend this range like a sort of power line.
+      </p>
+      <p>
+        I began by giving each the MainTower and WizardTower classes their own buildRange attributes to be set in the
+        inspector. Then, I created a RangeManager that listens for the construction or destruction of these buildings.
+        The rangeManager sets tiles in a new Tilemap to visualize this range to the player when in Building or Deleting
+        editing modes. This also works perfectly for building, because all that's needed to check whether a building
+        placement is valid is to look for a tile in the rangeMap in O(1) time. To enable or disbale this visualization
+        you just set the enabled state of the tilemap.
+      </p>
+      <div class="code" href="Scripts/RangeManager.cs"></div>
+      <img src="Images/TownRange.png" />
+      <p class="caption">The range of the town shown as a blue highlight around the buildings.</p>
 
       <!--Content ends here-->
       <div class="task-total"></div>
