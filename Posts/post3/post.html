@@ -189,7 +189,7 @@
 
       <div class="task" time="2.5h">Town Range</div>
       <p>
-        To make sure the player can't juts place buildings wherever they please throughout the world, we're going to use
+        To make sure the player can't just place buildings wherever they please throughout the world, we're going to use
         a system to limit the a range of the town. The town would be limited by the main tower in the center of the
         town. Then, the player will be able to place Wizard towers to extend this range like a sort of power line.
       </p>
@@ -204,6 +204,43 @@
       <div class="code" href="Scripts/RangeManager.cs"></div>
       <img src="Images/TownRange.png" />
       <p class="caption">The range of the town shown as a blue highlight around the buildings.</p>
+      <p>
+        When a wizard tower is deleted, all of the range tiles that rely on that tower are removed. For now, the
+        behavior is such that any building that is on a tile that leaves the range of the town is destroyed. This meant
+        that all other buildings would need to have the capability of being destoryed, so we needed to account for such.
+        To this end, I made it so that if the adventurers don't have a tavern to return to after a dungeon fight, they
+        instead travel to the main tower, which will always be present.
+      </p>
+      <p>
+        The one issue with the system in its current state is that a wizard tower that has been placed will always be in
+        range. This is because it defines a range around itself. This means that a wizard tower can continue to exist
+        even if it's completely seperated from the main tower's range. This is a problem I plan on resolving later, but
+        it's good to take note of it now.
+      </p>
+
+      <div class="task" time="0.5h">R&D Meeting 11/8/24</div>
+      <p>
+        Our group briefly met to discuss out current progress. We ddin't have very much that needed to be discussed,
+        hence the short duration of the meeting, but we figured it was better to keep a habit of having at least one R&D
+        meeting per week. I showed the progress I'd made this week and described that I'd hope to finish it to before
+        the next team meeting. Connor made it so that you can destory trees within the town range to collect wood. Nadav
+        finished up some of the environment tiles so we can begin art implementation soon.
+      </p>
+      <img src="Images/TileArt.png" />
+      <p class="caption">One of the finished tiles to be used in the game.</p>
+
+      <div class="task" time="1.5h">Wizard Tower ranges</div>
+      <p>
+        As previously noted in the section about town range, there is an issue regarding the wizard towers, in that they
+        don't require themselves to be connected to the main town. To solve this I implemented a algorithm that will be
+        run whenever a wizard tower is destroyed. The algorithm works by creating a list of relevant information of all
+        the towers. It repeatedly checks whether any new towers are within the range of towers it already knows to be in
+        range. At the beginning of the algorithm only the main tower is known to be in range. One no more towers require
+        checking for any nearby towers the loop ends. If any towers were not seen by any of the connected towers then
+        they are destroyed. This algorithm corrctly ensures that all wizard towers are either directly or indirectly
+        connected to the main tower.
+      </p>
+      <div class="code" href="Scripts/WizardTowerAlgorithm.cs"></div>
 
       <!--Content ends here-->
       <div class="task-total"></div>
