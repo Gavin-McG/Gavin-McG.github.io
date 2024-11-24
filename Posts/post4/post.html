@@ -29,6 +29,7 @@
     <script src="../../scripts/prism.js"></script>
     <link href="../../styles/code.css" rel="stylesheet" />
   </head>
+
   <body>
     <div class="content">
       <div class="header">
@@ -151,6 +152,32 @@
         functions respectively.
       </p>
       <div class="code" href="Scripts/DungeonMiniUI.cs"></div>
+
+      <div class="task" time="0.5h">Dungeon Reward UI</div>
+      <p>
+        As of now, when a dungeon battle is won or lost the only indicator of such is whether or not the adventurers
+        leave the dungeon and return to the tavern, which the player might not always be looking for. I wanted to add an
+        indicator screen that pops up once a battle in completed which explicitly informs the player of the outcome. I
+        created two similar UI, one for a win and one for a loss.
+      </p>
+      <img src="Images/DungeonWinUI.png" />
+      <p class="caption">Popup UI after dungeon victory.</p>
+      <p>
+        Implementation for this UI was fairly simple. Only two text components of the UI, the gold and the fossil
+        amount, need any updates. It also doesn't have any information that might change, so it doesn't have any update
+        function.
+      </p>
+      <div class="code" href="Scripts/DungeonWinUI.cs"></div>
+
+      <div class="task" time="1h">UI Queue System</div>
+      <p>
+        The new popup UI for dungeons are intended to communicate the results of a dungeon fight to the player whilst
+        they are doing other things. This means they might have another UI open when the battle finishes. In this case
+        we don't want to have multiple UI's overlapping each other. For this I created a UI queue system which can display 
+        popups only when all other UI elements are closed. The dungeon rewards popup are the only feature which currently 
+        use this, but it is good to have for later features that might be added.
+      </p>
+      <div class="code" href="Scripts/UIQueueManager.cs"></div>
 
       <!--Content ends here-->
       <div class="task-total"></div>
