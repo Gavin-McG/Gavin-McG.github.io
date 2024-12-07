@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Post</title>
+
+    <!--tab icon-->
+    <link rel="icon" href="../../Images/favicon.ico" type="image/x-icon" />
+
+    <!-- Include React and ReactDOM via CDN -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+
+    <!-- Babel for JSX support in the browser -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Include script to load code blocks-->
+    <script type="text/babel" src="../../scripts/code.js"></script>
+
+    <!-- Include script to format time features-->
+    <script type="text/babel" src="../../scripts/post.js"></script>
+
+    <!--style sheets-->
+    <link rel="stylesheet" href="../../styles/styles.css" />
+    <link rel="stylesheet" href="../../styles/post.css" />
+
+    <!--prism import-->
+    <script src="../../scripts/prism.js"></script>
+    <link href="../../styles/code.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="content">
+      <div class="header">
+        <a href="../../index.html">
+          <img class="header-logo" src="../../Images/Wsoft_Logo_mini.png" />
+        </a>
+        <h2 class="header-text">Post #5</h2>
+      </div>
+      <!--Content starts here-->
+
+      <div class="task" time="4h">Clouds</div>
+      <p>
+        One task I'd wanted to work on for severl weeks now, but could never find the time, it clouds. The initial idea
+        that I worked off of is that I wanted to create procedurally generated clouds that appear when zoomed out
+        enough. I began much like I did when conceptualizing the water shader, where I drafted the shader look in
+        Blender. Unfortunetly, while blender's code for the voronoi texture was simple enough to port over to HLSL
+        shader code, Blender's implementation of perlin noise was much nuanced and inconvenient to port over, so the
+        Blender idea was scrapped for this.
+      </p>
+      <p>
+        Fortunetly, Unity does provide documentation of their shader graph nodes, which includes their source node. I
+        used code provided in their documentation and adpated it into my own Cloud shader. While Unity's implementation
+        of perlin noise doesn't have as much detail, I could make it look more like clouds by combining 2 perlin noise
+        leyers. To apply this cloud shader I approached it in much the same way as I had the water shader. I created a
+        large plane, moved it in front of the tilegrid rather than behind, and applied a material with the cloud shader
+        to it.
+      </p>
+      <div class="code" href="Scripts/Clouds.shader"></div>
+      <p>
+        As it turns out, having the clouds applied as a mesh in the scene didn't work on account the the transparency of
+        the clouds. It didn't work at all with the sprite ordering of the tiles in the tilemap, and as far as I could
+        tell, there was no way to explictly change the rendering order of the cloud's plane mesh.
+      </p>
+      <img src="Images/GlitchedClouds.png" />
+      <p class="caption">Screenshot of broken cloud layering.</p>
+      <p>
+        My next approach was to apply the clouds as a post-process. While I prehaps should have known to go with this
+        approach from the start, I was lazy wanted to avoid doing the extra math involving camera size and camera
+        position for the uv coordinates. I created a script which would both apply the post process to the render output
+        of the camera and send the camera's information to the shader.
+      </p>
+      <div class="code" href="Scripts/Clouds.cs"></div>
+      <p>This solution both fixed the sprite ordering issues and had a result I was very satisfied with.</p>
+      <img src="Images/FixedClouds.png" />
+      <p class="caption">Final result of clouds.</p>
+
+      <div class="task" time="1.5h">R&D Meeting 12/4/24</div>
+      <p>
+        With the semester nearing a close we had a lot to talk about regarding the final deliverables of our project.
+        The R&D groups had 5 main deliverables to prepare: Game Design Document, Programming Design Document, Art Design
+        Document, Audio Design Document, and the pitch deck. We created pages in the notion which for which the design
+        documents were to be completed in. The pitch deck, which isn't due until the 15th, took second priority for now.
+      </p>
+      <p>
+        We also talked about what final changes and additions we wanted to make before the end of the semester. Seeing
+        as we needed to have an audio design document, and out project presently had zero audio, I decided I would make
+        it one of my priorities to add a basic system for sound effects.
+      </p>
+      <p>
+        Connor would work of fixing up certain bugs and tweaking some game balancing parameters. Nadav would work on
+        completing the wizard tower, which was the only main building which yet to have art implementation. Nadav also
+        was close to finishing alternative variants of the tree sprite. The prior version of the tree was too close in
+        color to the grass which was something we'd received feedback on in playtesting.
+      </p>
+
+      <div class="task" time="2.5h">Sound Effects</div>
+      <p>
+        The only time I'd previously worked with sound effects in Unity was for various game jams I've participated in.
+        In these Game Jams the result is very much thrown together, so while having 12 different Audio sources for each
+        different sound effect was certaintly a quick solution for a game jam, I figured I should pursue a more clean
+        solution for this project.
+      </p>
+      <p>
+        After some research I found that the AudioSource component has a playOneShot() function which can be used to
+        play different sound effects whenever you want, even if they overlap with one another. I created a AudioManager
+        script which would hold all the different audio clips and they them in response to certain game events. Manay of
+        the events for these effects already were added, but others I had to create new events for.
+      </p>
+      <div class="code" href="Scripts/AudioManager.cs"></div>
+      <p>
+        As for what audio effects I used for this, I added a combinations of effects that I produced quickly using the
+        online <a href="https://sfxr.me/">JSFXR</a> tool and a couple sound effects I collected from free use sites like
+        <a href="https://freesound.org/">FreeSound</a>. None of the sounds used from these sources are ideal for a final
+        product, but for a prototype it's nice to have sound in the game prior to the showcase. There also isn't any
+        music presently, which is another aspect that would be necessary for the final product.
+      </p>
+      <img src="Images/AudioClips.png" />
+      <p class="caption">Picture of all Audio Clips currently in the game.</p>
+
+      <div class="task" time="3h">Design Documents</div>
+      <p>
+        In our previous meeting we decided who'd be working on which of the 4 design documents we were to create. Nadav,
+        being the artist, would of course be working on the Art Design Document. Connor and I would both contribute to
+        the programming design document and the game design document, with my primary focus being programming and his
+        being design. That left the Audio deisgn document. Given none of us had hardly any experience with audio or
+        music, I decided to volunteer to complete it.
+      </p>
+      <p>
+        For the programming design document one thing we were supposed to provide was an outline of the programming
+        structure. I used Canva to produce a basic flowchart which included all of the most major components of the
+        game's function that I could recall and the major relationships between said scripts.
+      </p>
+      <img src="Images/ProgrammingFlowchart.png" />
+      <p class="caption">Flowchart of the game's programming structure</p>
+      <p>
+        I also provided a 2-3 sentence description of each of the mentioned components and their functions, going into
+        more detail about the Buidling, Structure, and Tile information. The last peice of information I chose to
+        include was information about the coordiante system. I had already created programming documentation for the
+        coordinate systems, so I made a 2-3 paragraph summary ofthat page.
+      </p>
+      <img src="Images/ProgrammingDoc.png" />
+      <p class="caption">Portion of the completed programming Design Document.</p>
+      <p>
+        Again, the audio aspect of game development was something I had very sparse experience with, which is why it was
+        fortunate that there were references to audio design documents from other projects provided. Using these
+        ducuments as a rough guide I put all the information I could think to provide.
+      </p>
+      <p>
+        I chose to describe what vibe/theme the music should have given the genre, lore, and setting of the game. I
+        found a compilation of fantasy music that I thought might be a good reference, as a playlist was recommended for
+        this document. I also describes where and what sort of sound effects might be added into the game, including
+        different sounds for interacting wth different buidlings, sound effects for UI interaction, ambient noises to
+        make the world feel more alive, and sound effects for dungeon battles.
+      </p>
+      <p>
+        There was also a brief section to describe the implementation of audio effects, briefly describing the current
+        system, and that elaborating on this system and implementation of audio would primarily fall onto the
+        programmer's responsibility.
+      </p>
+      <img src="Images/AudioDoc.png" />
+      <p class="caption">Portion of the completed Audio Design Document.</p>
+
+      <!--Content ends here-->
+      <div class="task-total"></div>
+    </div>
+  </body>
+</html>
