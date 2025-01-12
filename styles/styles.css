@@ -102,14 +102,14 @@ body {
 
 .post-info {
     width: 100%;
-    border-radius: 14px;
+    border-radius: 17px;
     background-color: #444;
 }
 
 .post-image {
     width: 100%;
     height: auto;
-    border-radius: 14px;
+    border-radius: 17px;
 }
 
 .post-date {
@@ -169,6 +169,10 @@ body {
         width: 100%;
         margin: 2.5vw 0 0 0;
         border-bottom: solid white 3px;
+    }
+
+    .log-description {
+        font-size: 4vw;
     }
 
     .post-container {
