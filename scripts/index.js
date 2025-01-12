@@ -24,7 +24,7 @@ class Post extends React.Component {
                     <h2 className="post-date">{data.date}</h2>
                 </div>
                 <p className="post-description">{data.description}</p>
-                <a className="post-link" href={postPath+'/'+data.postFile} target="_blank" rel="noopener noreferrer">
+                <a className="post-link" href={postPath+'/'+data.postFile}>
                     Visit Post
                 </a>
             </div>
