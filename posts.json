@@ -1,10 +1,42 @@
-{
-    "postDirectory" : "Posts",
-    "postNames": [
-        "post1",
-        "post2",
-        "post3",
-        "post4",
-        "post5"
+[{
+    "title" : "WolverineSoft Fall 2024",
+    "Description": "",
+    "logDir" : "Posts/WS_F24",
+    "posts": [
+        {
+            "postDir": "post1",
+            "date": "Sep 29 - Oct 13",
+            "description": "Onboarding, genre/game selection, genre research, and Building System",
+            "thumbnailPath": "Images/thumbnail.png",
+            "postFile": "post.html"
+        },
+        {
+            "postDir": "post2",
+            "date": "Oct 13 - Oct 27",
+            "description": "Building System Tweaks, Camera Controls, environmental objects, and Pathfinding",
+            "thumbnailPath": "Images/thumbnail.png",
+            "postFile": "post.html"
+        },
+        {
+            "postDir": "post3",
+            "date": "Oct 27 - Nov 10",
+            "description": "Questing System, Many new UI's, Town Ranges, and playtesting",
+            "thumbnailPath": "Images/thumbnail.png",
+            "postFile": "post.html"
+        },
+        {
+            "postDir": "post4",
+            "date": "Nov 10 - Nov 24",
+            "description": "Quest System UI Finalized",
+            "thumbnailPath": "Images/ArtImplementation.png",
+            "postFile": "post.html"
+        },
+        {
+            "postDir": "post5",
+            "date": "Nov 24 - Dec 8",
+            "description": "Clouds, Sounds, and Finishing Touches",
+            "thumbnailPath": "Images/FixedClouds.png",
+            "postFile": "post.html"
+        }
     ]
-}
+}]
