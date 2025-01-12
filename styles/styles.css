@@ -1,10 +1,11 @@
-html::after {
+html {
     margin: 0;
     padding: 0;
     height: 100%;
 }
 
 body {
+    color: white;
     background-color: #333333;
     background-image: url("../Images/background.jpg");
     margin: 0;
@@ -13,172 +14,188 @@ body {
 }
 
 .content {
-    background-color: #000000a0;
-    margin: 0 10%;
-    padding: 10px 10px 50px 10px;
-    height: 100%;
-    color: white;
+    width: 80%;
+    margin: 0 auto 0 auto;
+    background-color: #000A;
 }
 
 .main-info-container {
-    background-image: url("../Images/Wsoft_Logo.png");
-    background-size: 600px auto;
-    background-repeat: no-repeat;
-    background-position: center;
+    margin-top: 20px;
+    padding-top: 10px;
     width: 100%;
-    height: 600px;
-    display: grid;
+    height: 30vw;
 }
 
 .main-info {
-    background-color: #424242a0;
-    background-blend-mode: add;
-    width: 720px;
+    background-image: url(../Images/Unity_Logo.png);
+    background-blend-mode: multiply;
+    background-size: 100%;
+    aspect-ratio: 1;
+    height: 100%;
+    margin: 0 auto 0 auto;
+}
+
+.main-info * {
     text-align: center;
-    color:#ffffff;
-    padding: 10px;
-    margin: auto;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .title {
-    font-size: 77px;
-    margin: 0;
-    padding: 0;
+    text-decoration: none;
+    font-size: 5vw;
+    font-weight: bold;
+    padding-top: 33%;
 }
 
 .author {
-    font-size: 55px;
-    margin: 0;
-    padding: 0;
+    font-size: 2vw;
 }
 
-.semester {
-    font-size: 44px;
-    margin: 0;
-    padding: 0;
-}
-
-/* Grid container styles */
-.grid-container {
-    width: 1600px;
-    margin: auto;
+.log-header {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Maximum 3 columns */
-    gap: 10px; /* Spacing between grid items */
+    grid-template-columns: auto 1fr;
 }
 
-@media (max-width: 2100px) {
-    .grid-container {
-        width: 1200px;
-        grid-template-columns: repeat(3, 1fr); /* Maximum 3 columns */
-    }
+.log-image {
+    width: auto;
+    height: 6vw
 }
 
-@media (max-width: 1600px) {
-    .grid-container {
-        width: 800px;
-        grid-template-columns: repeat(2, 1fr); /* Maximum 3 columns */
-    }
+.log-title {
+    font-size: 3vw;
+    width: 100%;
+    height: min-content;
+    border-bottom: solid white 3px;
+    padding: 0;
+    margin: 1vw 0 0 0;
 }
 
-@media (max-width: 1100px) {
-    .grid-container {
-        width: 400px;
-        grid-template-columns: repeat(1, 1fr); /* Maximum 3 columns */
+.log-description {
+    margin: 2vw 3vw 2vw 3vw;
+    font-size: 2vw;
+}
+
+.devlog-container {
+    margin: 0 2% 0 2%;
+}
+
+.post-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 5vw;
+}
+
+.post {
+    width: 400px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    margin: 10px;
+    padding: 4px;
+    background-color: #222;
+    border: solid 2px #888;
+    border-radius: 20px;
+}
+
+.post-info {
+    width: 100%;
+    border-radius: 14px;
+    background-color: #444;
+}
+
+.post-image {
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+}
+
+.post-date {
+    font-size: 30px;
+    margin: 10px 20px 10px 20px;
+}
+
+.post-description {
+    font-size: 25px;
+    color: white;
+    margin: 10px;
+}
+
+.post-link {
+    height: min-content;
+    font-size: 20px;
+    text-align: right;
+    margin-right: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+.post-link:hover {
+    text-decoration: underline;
+    color: pink;
+}
+
+.post-link:visited {
+    color: darkgray;
+}
+
+@media (max-width: 800px) {
+    .content {
+        width: 90%;
     }
 
-    .main-info {
-        padding: 10px 0;
+    .main-info-container {
         width: 100%;
+        height: 70vw;
     }
 
     .title {
-        font-size: 7vw;
+        font-size: 10vw;
     }
-
+    
     .author {
+        font-size: 6vw;
+    }
+
+    .log-image {
+        width: auto;
+        height: 12vw;
+    }
+    
+    .log-title {
         font-size: 5vw;
-    }
-
-    .semester {
-        font-size: 4vw;
-    }
-}
-
-@media (max-width: 700px) {
-    .main-info-container {
         width: 100%;
-        height: auto;
-        background-size: 100% auto;
-        aspect-ratio: 1;
+        margin: 2.5vw 0 0 0;
+        border-bottom: solid white 3px;
     }
-}
 
-@media (max-width: 550px) {
-    .grid-container {
-        width: 100%;
+    .post-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
-}
 
-
-.heading {
-    font-size: 60px;
-    text-align: center;
-    width: 80%;
-    border-bottom: white solid 2px;
-    display: block;
-    margin: auto auto 10px auto;
-}
-
-/* Grid item styles */
-.grid-item {
-    background-color: #222222;
-    color: white;
-    outline: solid 2px white;
-    width: 100%-40px;
-    padding: 20px;
-    margin: 10px 10px 10px 10px;
-    text-align: left;
-}
-
-.item-info {
-    width: 100%-20px;
-    margin: 0px;
-    padding: 0px;
-    background-color: #111111;
-    outline: solid 4px #333333;
-}
-
-.item-image {
-    width: 100%;
-    margin: 0px;
-}
-
-.item-date {
-    width: 100%;
-    margin: 0px;
-    padding: 10px;
-}
-
-.item-description {
-    width: 100%-20px;
-    padding: 0px 10px;
-    font-size: 20px;
-}
-
-.item-link {
-    width: 100%-20px;
-    padding: 0px 10px;
-    text-align: right;
-    float: right;
-    color: #bbbbbb;
-    font-size: 24px;
-}
-
-.item-link:hover {
-    color: white;
-}
-
-.item-link:visited {
-    color: purple;
+    .post {
+        width: auto;
+        margin: 1vw;
+        padding: 0.5vw;
+    }
+    
+    .post-date {
+        font-size: 3.5vw;
+        margin: 1vw 2vw 1vw 2vw;
+    }
+    
+    .post-description {
+        font-size: 2.5vw;
+        margin: 2vw;
+    }
+    
+    .post-link {
+        font-size: 3vw;
+        text-align: right;
+        margin-right: 4vw;
+    }
+    
 }

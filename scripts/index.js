@@ -18,13 +18,13 @@ class Post extends React.Component {
         const postPath = dir+'/'+data.postDir;
 
         return (
-            <div className="grid-item">
-                <div className="item-info">
-                    <img className="item-image" src={postPath+'/'+data.thumbnailPath} alt="Post Thumbnail" />
-                    <h2 className="item-date">{data.date}</h2>
+            <div className="post">
+                <div className="post-info">
+                    <img className="post-image" src={postPath+'/'+data.thumbnailPath} alt="Post Thumbnail" />
+                    <h2 className="post-date">{data.date}</h2>
                 </div>
-                <p className="item-description">{data.description}</p>
-                <a className="item-link" href={postPath+'/'+data.postFile} target="_blank" rel="noopener noreferrer">
+                <p className="post-description">{data.description}</p>
+                <a className="post-link" href={postPath+'/'+data.postFile} target="_blank" rel="noopener noreferrer">
                     Visit Post
                 </a>
             </div>
@@ -35,11 +35,15 @@ class Post extends React.Component {
 class PostList extends React.Component {
     render() {
         const { data } = this.props;
+        
         return (
             <div className="devlog">
-                <h1 className="log-title">{data.title}</h1>
-                <p className="log-description">{data.description}</p>
-                <div className="grid-container">
+                <div className="log-header">
+                    <img className="log-image" src={data.image} />
+                    <h1 className="log-title">{data.title}</h1>
+                </div>
+                <p className="log-description">{data.Description}</p>
+                <div className="post-container">
                     {data.posts.map((post) => (
                         <Post key={post.postDir} data={post} dir={data.logDir} />
                     ))}
@@ -83,7 +87,7 @@ class App extends React.Component {
         }
 
         return (
-            <div className="grid-container">
+            <div className="devlog-container">
                 {logs.map((devlogData) => (
                     <PostList key={devlogData.title} data={devlogData} />
                 ))}
@@ -93,4 +97,4 @@ class App extends React.Component {
 }
 
 // Render the React app
-ReactDOM.render(<App />, document.getElementById('posts'));
+ReactDOM.render(<App />, document.getElementById('app'));
