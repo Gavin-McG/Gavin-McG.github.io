@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Post</title>
+
+    <!--tab icon-->
+    <link rel="icon" href="../../../Images/favicon.ico" type="image/x-icon" />
+
+    <!-- Include React and ReactDOM via CDN -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+
+    <!-- Babel for JSX support in the browser -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Include script to format time features-->
+    <script type="text/babel" src="../../../scripts/post.js"></script>
+
+    <!--style sheets-->
+    <link rel="stylesheet" href="../../../styles/styles.css" />
+    <link rel="stylesheet" href="../../../styles/post.css" />
+  </head>
+
+  <body>
+    <div class="content">
+      <div class="header">
+        <a href="../../../index.html">
+          <img class="header-logo" src="../../../Images/Unity_Logo_mini.png" />
+        </a>
+        <h2 class="header-text">Spring In My Step</h2>
+      </div>
+
+      <!--Content starts here-->
+      <h1>Concept</h1>
+      <p>
+        Spring In My Step is a solo project I created for the 2024 Turkey Jam. It is a Side-scroller heavily inspired by
+        PogoStuck. It featured a player which must use their pogostick to navigate obstacles to get to the bus stop. The
+        player must ensure not to land too awqwardly lest they fall off their pogo stick.
+      </p>
+      <p>
+        I hoped to experiment in this game by using only a single gradient of color for the game's visuals. To help make
+        the game feel less flat, instead of using a normal diffuse shader I created a shader which applied the color by
+        distance and angle with the camera to give the game a more unique look.
+      </p>
+
+      <div class="game-container">
+        <iframe class="game" src="WebBuild/index.html" style="border: none"></iframe>
+      </div>
+
+      <h2>Controls</h2>
+      <ul>
+        <li>WASD/Arrow keys to rotate</li>
+        <li>Space to Jump higher</li>
+      </ul>
+    </div>
+  </body>
+</html>

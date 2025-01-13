@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wrong Way!!!</title>
+
+    <!--tab icon-->
+    <link rel="icon" href="../../../Images/favicon.ico" type="image/x-icon" />
+
+    <!-- Include React and ReactDOM via CDN -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+
+    <!-- Babel for JSX support in the browser -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Include script to format time features-->
+    <script type="text/babel" src="../../../scripts/post.js"></script>
+
+    <!--style sheets-->
+    <link rel="stylesheet" href="../../../styles/styles.css" />
+    <link rel="stylesheet" href="../../../styles/post.css" />
+  </head>
+
+  <body>
+    <div class="content">
+      <div class="header">
+        <a href="../../../index.html">
+          <img class="header-logo" src="../../../Images/Unity_Logo_mini.png" />
+        </a>
+        <h2 class="header-text">Wrong Way!!!</h2>
+      </div>
+
+      <!--Content starts here-->
+      <h1>Concept</h1>
+      <p>
+        Wrong Way!!! is a project created for the 2024 Global Game jam from the prompt “Make me laugh”. The game is a
+        2-player local multiplayer where the player must throw frisbees into the crowd to score points as members of the
+        audience laugh at their peers’ misfortune.
+      </p>
+      <p>
+        This project used several Unity features which I hadn’t previously taken advantage of, such as custom skyboxes,
+        trails, and changing global physics properties. I also had to learn more about using materials and shaders to
+        allow a gradient of skin tones both in regards to the players and members of the audience.
+      </p>
+
+      <div class="game-container">
+        <iframe class="game" src="WebBuild/index.html" style="border: none"></iframe>
+      </div>
+
+      <h2>Controls</h2>
+      <ul>
+        <li>JoyStick to aim throw</li>
+        <li>Hold X/A to charge throw</li>
+        <li>Release X/A to release throw</li>
+      </ul>
+
+      <h2>Requirements</h2>
+      <ul>
+        <li>2 Controllers</li>
+      </ul>
+    </div>
+  </body>
+</html>

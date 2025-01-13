@@ -1,50 +1,95 @@
-[{
-    "title": "WolverineSoft Fall 2024",
-    "image": "Images/Wsoft_Logo_mini.png",
-    "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "logDir" : "Posts/WS_F24",
-    "posts": [
-        {
-            "postDir": "post1",
-            "date": "Sep 29 - Oct 13",
-            "description": "Onboarding, genre/game selection, genre research, and Building System",
-            "thumbnailPath": "Images/thumbnail.png",
-            "postFile": "post.html"
-        },
-        {
-            "postDir": "post2",
-            "date": "Oct 13 - Oct 27",
-            "description": "Building System Tweaks, Camera Controls, environmental objects, and Pathfinding",
-            "thumbnailPath": "Images/thumbnail.png",
-            "postFile": "post.html"
-        },
-        {
-            "postDir": "post3",
-            "date": "Oct 27 - Nov 10",
-            "description": "Questing System, Many new UI's, Town Ranges, and playtesting",
-            "thumbnailPath": "Images/thumbnail.png",
-            "postFile": "post.html"
-        },
-        {
-            "postDir": "post4",
-            "date": "Nov 10 - Nov 24",
-            "description": "Quest System UI Finalized",
-            "thumbnailPath": "Images/ArtImplementation.png",
-            "postFile": "post.html"
-        },
-        {
-            "postDir": "post5",
-            "date": "Nov 24 - Dec 8",
-            "description": "Clouds, Sounds, and Finishing Touches",
-            "thumbnailPath": "Images/FixedClouds.png",
-            "postFile": "post.html"
-        }
-    ]
-},
-{
-    "title": "WolverineSoft Winter 2025",
-    "image": "Images/Wsoft_Logo_mini.png",
-    "Description": "",
-    "logDir" : "Posts/WS_W25",
-    "posts": []
-}]
+[
+    {
+        "title": "WolverineSoft Winter 2025",
+        "image": "Images/Wsoft_Logo_mini.png",
+        "Description": "",
+        "logDir": "Posts/WS_W25",
+        "posts": []
+    },
+    {
+        "title": "WolverineSoft Fall 2024",
+        "image": "Images/Wsoft_Logo_mini.png",
+        "Description": "Project Dragonheart was a semester-long project within WolverineSoft Studio, where our small R&D team worked tirelessly to craft a prototype worthy of full-scale development. Comprised of Connor Spears, Nadav Havilio, and myself, we embarked on this creative endeavor with the goal of designing a unique management simulator steeped in a fantasy setting. Our process began with careful genre research and collaboration, which quickly evolved into hands-on development, learning new tools like Unity TileMaps, completing custom pathfnding algorithms, using shaders for impressive visual features, and design documentation.",
+        "logDir": "Posts/WS_F24",
+        "posts": [
+            {
+                "postDir": "post1",
+                "date": "Sep 29 - Oct 13",
+                "description": "Onboarding, genre/game selection, genre research, and Building System",
+                "thumbnailPath": "Images/thumbnail.png",
+                "postFile": "post.html"
+            },
+            {
+                "postDir": "post2",
+                "date": "Oct 13 - Oct 27",
+                "description": "Building System Tweaks, Camera Controls, environmental objects, and Pathfinding",
+                "thumbnailPath": "Images/thumbnail.png",
+                "postFile": "post.html"
+            },
+            {
+                "postDir": "post3",
+                "date": "Oct 27 - Nov 10",
+                "description": "Questing System, Many new UI's, Town Ranges, and playtesting",
+                "thumbnailPath": "Images/thumbnail.png",
+                "postFile": "post.html"
+            },
+            {
+                "postDir": "post4",
+                "date": "Nov 10 - Nov 24",
+                "description": "Quest System UI Finalized",
+                "thumbnailPath": "Images/ArtImplementation.png",
+                "postFile": "post.html"
+            },
+            {
+                "postDir": "post5",
+                "date": "Nov 24 - Dec 8",
+                "description": "Clouds, Sounds, and Finishing Touches",
+                "thumbnailPath": "Images/FixedClouds.png",
+                "postFile": "post.html"
+            }
+        ]
+    },
+    {
+        "title": "GameJams",
+        "image": "Images/Unity_Logo_mini.png",
+        "Description": "",
+        "logDir": "Posts/gamejams",
+        "posts": [
+            {
+                "postDir": "pumpkinPelter",
+                "date": "October 2023",
+                "description": "Fight off waves of Haunted Pumpkins",
+                "thumbnailPath": "thumbnail.png",
+                "postFile": "post.html"
+            },
+            {
+                "postDir": "wrongWay",
+                "date": "January 2024",
+                "description": "Competitive Frisbee Target practice",
+                "thumbnailPath": "thumbnail.png",
+                "postFile": "post.html"
+            },
+            {
+                "postDir": "turkeyTussle",
+                "date": "March 2024",
+                "description": "PvP Turkey Jousting",
+                "thumbnailPath": "thumbnail.png",
+                "postFile": "post.html"
+            },
+            {
+                "postDir": "worldsHardestTrip",
+                "date": "October 2024",
+                "description": "Difficult top-down 2D game",
+                "thumbnailPath": "thumbnail.png",
+                "postFile": "post.html"
+            },
+            {
+                "postDir": "springInMyStep",
+                "date": "November 2024",
+                "description": "Pogo-Jumping Side-scroller",
+                "thumbnailPath": "thumbnail.png",
+                "postFile": "post.html"
+            }
+        ]
+    }
+]

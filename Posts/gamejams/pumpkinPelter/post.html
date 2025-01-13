@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wrong Way!!!</title>
+
+    <!--tab icon-->
+    <link rel="icon" href="../../../Images/favicon.ico" type="image/x-icon" />
+
+    <!-- Include React and ReactDOM via CDN -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+
+    <!-- Babel for JSX support in the browser -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Include script to format time features-->
+    <script type="text/babel" src="../../../scripts/post.js"></script>
+
+    <!--style sheets-->
+    <link rel="stylesheet" href="../../../styles/styles.css" />
+    <link rel="stylesheet" href="../../../styles/post.css" />
+  </head>
+
+  <body>
+    <div class="content">
+      <div class="header">
+        <a href="../../../index.html">
+          <img class="header-logo" src="../../../Images/Unity_Logo_mini.png" />
+        </a>
+        <h2 class="header-text">Pumpkin Pelter</h2>
+      </div>
+
+      <!--Content starts here-->
+      <h1>Concept</h1>
+      <p>
+        Pumpkin Pelter was my solo submission for the wolverinesoft Mega jam in Fall 2023. The player must fend off
+        magic haunted pumpkins using small pumpkins as throwable projectiles. It features 8 different waves of different
+        enemies, each with different attack patterns, with the last wave being a final boss fight. The overall gameplay
+        was roughly inspired by the boss fights featured in the super mario galaxy games.
+      </p>
+      <p>
+        All of the 3d models were created by me using blender. All animations and attack patterns are controlled and
+        dictated via scripts. The grass uses compute shaders and gpu instancing to prevent it from having a significant
+        performance impact. The sound effects were made using JSFXR and the music was taken from a free-to-use archive.
+      </p>
+      <p>
+        Unfortunetally, this project was created using an older version of Unity that isn't working for a web build. It
+        can be downloaded for Windows on
+        <a href="https://gavinmcg.itch.io/pumpkin-pelter">My Itch Page</a>.
+      </p>
+
+      <img src="thumbnail.png" />
+      <p class="caption">Screenshot from pumpkin-pelter</p>
+
+      <h2>Controls</h2>
+      <ul>
+        <li>WASD to Move</li>
+        <li>Space to jump</li>
+        <li>E to grab Pumpkins</li>
+        <li>E to throw Pumpkins</li>
+        <li>Click+Drag to move camera</li>
+      </ul>
+    </div>
+  </body>
+</html>

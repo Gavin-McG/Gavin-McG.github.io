@@ -16,7 +16,8 @@ body {
 .content {
     width: 80%;
     margin: 0 auto 0 auto;
-    background-color: #000A;
+    padding: 10px;
+    background-color: #111A;
 }
 
 .main-info-container {
@@ -73,8 +74,9 @@ body {
 }
 
 .log-description {
-    margin: 2vw 3vw 2vw 3vw;
-    font-size: 2vw;
+    width: 80%;
+    margin: 2vw auto 2vw auto;
+    font-size: calc(max(1em,1.4vw));
 }
 
 .devlog-container {
@@ -109,7 +111,7 @@ body {
 .post-image {
     width: 100%;
     height: auto;
-    border-radius: 17px;
+    border-radius: 17px 17px 0 0;
 }
 
 .post-date {
@@ -172,6 +174,7 @@ body {
     }
 
     .log-description {
+        width: auto;
         font-size: 4vw;
     }
 

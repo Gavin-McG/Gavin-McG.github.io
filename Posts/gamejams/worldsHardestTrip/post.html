@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Post</title>
+
+    <!--tab icon-->
+    <link rel="icon" href="../../../Images/favicon.ico" type="image/x-icon" />
+
+    <!-- Include React and ReactDOM via CDN -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+
+    <!-- Babel for JSX support in the browser -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Include script to format time features-->
+    <script type="text/babel" src="../../../scripts/post.js"></script>
+
+    <!--style sheets-->
+    <link rel="stylesheet" href="../../../styles/styles.css" />
+    <link rel="stylesheet" href="../../../styles/post.css" />
+  </head>
+
+  <body>
+    <div class="content">
+      <div class="header">
+        <a href="../../../index.html">
+          <img class="header-logo" src="../../../Images/Unity_Logo_mini.png" />
+        </a>
+        <h2 class="header-text">The World's Hardest Trip</h2>
+      </div>
+
+      <!--Content starts here-->
+      <h1>Concept</h1>
+      <p>
+        The World's Hardest Trip is a solo project I created for the 2024 Pumpkin Jam. It is inspired by the classic
+        Flash game titled The World's hardest game, featuring a similar set of challenges and control system. This game
+        is made unique by is interesting visuals and unique design approach.
+      </p>
+      <p>
+        I approached creating this game with the self-adminiserted challenge of using as little assets & scene elements
+        as possible within the Unity game engine. The final project only has 3 assets: a script, a shader, and a scene.
+        The scene itself only has one camera object. All of the games visuals are displayed via a single post-processing
+        shader and all of the level data is within the script's serializable variables.
+      </p>
+      <p>
+        Unfortunetally, this unique approach to game development resulted in a project that doesn't function as a web
+        build. The project can be downloaded for Windows on
+        <a href="https://gavinmcg.itch.io/the-worlds-hardest-trip">My Itch Page</a>.
+      </p>
+
+      <img src="thumbnail.png" />
+      <p class="caption">Screenshot from The World's Hardest Trip</p>
+
+      <h2>Controls</h2>
+      <ul>
+        <li>WASD/Arrow Keys to move</li>
+      </ul>
+    </div>
+  </body>
+</html>
