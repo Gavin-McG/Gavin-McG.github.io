@@ -4,7 +4,15 @@
         "image": "Images/Wsoft_Logo_mini.png",
         "Description": "",
         "logDir": "Posts/WS_W25",
-        "posts": []
+        "posts": [
+            {
+                "postDir": "post1",
+                "date": "Jan 19 - Feb 9",
+                "description": "Onboarding, Interfaces, and Contractor Systems",
+                "thumbnailPath": "Images/thumbnail.jpg",
+                "postFile": "post.html"
+            }
+        ]
     },
     {
         "title": "WolverineSoft Fall 2024",
