@@ -57,11 +57,12 @@ body {
 .log-header {
     display: grid;
     grid-template-columns: auto 1fr;
+    gap: 10px;
 }
 
 .log-image {
-    width: auto;
-    height: 6vw
+    width: 6vw;
+    height: auto;
 }
 
 .log-title {
@@ -162,8 +163,8 @@ body {
     }
 
     .log-image {
-        width: auto;
-        height: 12vw;
+        width: 12vw;
+        height: auto;
     }
     
     .log-title {

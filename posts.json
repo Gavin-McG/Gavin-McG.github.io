@@ -65,36 +65,51 @@
         "posts": [
             {
                 "postDir": "pumpkinPelter",
-                "date": "October 2023",
+                "date": "Pumpkin Pelter",
                 "description": "Fight off waves of Haunted Pumpkins",
                 "thumbnailPath": "thumbnail.png",
                 "postFile": "post.html"
             },
             {
                 "postDir": "wrongWay",
-                "date": "January 2024",
+                "date": "Wrong Way",
                 "description": "Competitive Frisbee Target practice",
                 "thumbnailPath": "thumbnail.png",
                 "postFile": "post.html"
             },
             {
                 "postDir": "turkeyTussle",
-                "date": "March 2024",
+                "date": "Turkey Tussle",
                 "description": "PvP Turkey Jousting",
                 "thumbnailPath": "thumbnail.png",
                 "postFile": "post.html"
             },
             {
                 "postDir": "worldsHardestTrip",
-                "date": "October 2024",
+                "date": "World's Hardest Trip",
                 "description": "Difficult top-down 2D game",
                 "thumbnailPath": "thumbnail.png",
                 "postFile": "post.html"
             },
             {
                 "postDir": "springInMyStep",
-                "date": "November 2024",
+                "date": "Spring In My Step",
                 "description": "Pogo-Jumping Side-scroller",
+                "thumbnailPath": "thumbnail.png",
+                "postFile": "post.html"
+            }
+        ]
+    },
+    {
+        "title": "EECS 494 Projects",
+        "image": "Images/M_Logo_mini.png",
+        "Description": "",
+        "logDir": "Posts/EECS494",
+        "posts": [
+            {
+                "postDir": "project1",
+                "date":"Metroid x Portal",
+                "description": "Recreating a nintendo classic with a twist",
                 "thumbnailPath": "thumbnail.png",
                 "postFile": "post.html"
             }
