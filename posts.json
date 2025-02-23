@@ -9,7 +9,14 @@
                 "postDir": "post1",
                 "date": "Jan 19 - Feb 9",
                 "description": "Onboarding, Interfaces, and Contractor Systems",
-                "thumbnailPath": "Images/thumbnail.jpg",
+                "thumbnailPath": "Images/Console.png",
+                "postFile": "post.html"
+            },
+            {
+                "postDir": "post2",
+                "date": "Feb 9 - Feb 23",
+                "description": "Squash and Stretch iteractions, World map redesign, and Main Tower UI",
+                "thumbnailPath": "Images/MapRedesign.png",
                 "postFile": "post.html"
             }
         ]
