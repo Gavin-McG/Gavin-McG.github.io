@@ -119,6 +119,13 @@
                 "description": "Recreating a nintendo classic with a twist",
                 "thumbnailPath": "thumbnail.png",
                 "postFile": "post.html"
+            },
+            {
+                "postDir": "project2",
+                "date":"Gluten Gunning",
+                "description": "Rapid Prototype Toast Game",
+                "thumbnailPath": "thumbnail.png",
+                "postFile": "post.html"
             }
         ]
     }

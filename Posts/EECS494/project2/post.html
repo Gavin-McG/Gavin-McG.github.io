@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EECS494 p1</title>
+
+    <!--tab icon-->
+    <link rel="icon" href="../../../Images/favicon.ico" type="image/x-icon" />
+
+    <!-- Include React and ReactDOM via CDN -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+
+    <!-- Babel for JSX support in the browser -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Include script to load code blocks-->
+    <script type="text/babel" src="../../../scripts/code.js"></script>
+
+    <!-- Include script to format time features-->
+    <script type="text/babel" src="../../../scripts/post.js"></script>
+
+    <!--style sheets-->
+    <link rel="stylesheet" href="../../../styles/styles.css" />
+    <link rel="stylesheet" href="../../../styles/post.css" />
+
+    <!--prism import-->
+    <script src="../../../scripts/prism.js"></script>
+    <link href="../../../styles/code.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="content">
+      <div class="header">
+        <a href="../../../index.html">
+          <img class="header-logo" src="../../../Images/Wsoft_Logo_mini.png" />
+        </a>
+        <h2 class="header-text">Gluten Gunning</h2>
+      </div>
+
+      <!--Content starts here-->
+
+      <h1>Information</h1>
+      <p>Student Name: Gavin McGinness</p>
+      <p>
+        This project was created solo for EECS 494 Project 2 over the course of 2 weeks. The game features a combat between
+        two players who must collect bread, litter it with toppings, before shooting the resulting toast at their
+        opponent. Each topping has a unique effect. Beyond the features of the game, in completeing this project I
+        gained extra experinece in the following tools within Unity:
+      </p>
+      <ul>
+        <li>Baked Lighting</li>
+        <li>URP</li>
+        <li>Input System</li>
+        <li>Texturing</li>
+      </ul>
+
+      <u><h2>Requires at least 1 Controller + Keyboard&Mouse</h2></u>
+
+      <div style="height:3vw;"></div>
+
+      <div class="game-container">
+        <iframe class="game" src="Web-Build/index.html" style="border: none"></iframe>
+      </div>
+
+      <div style="height:10vw;"></div>
+    </div>
+  </body>
+</html>
