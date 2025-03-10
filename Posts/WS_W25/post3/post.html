@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Post</title>
+
+    <!--tab icon-->
+    <link rel="icon" href="../../../Images/favicon.ico" type="image/x-icon" />
+
+    <!-- Include React and ReactDOM via CDN -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+
+    <!-- Babel for JSX support in the browser -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Include script to load code blocks-->
+    <script type="text/babel" src="../../../scripts/code.js"></script>
+
+    <!-- Include script to format time features-->
+    <script type="text/babel" src="../../../scripts/post.js"></script>
+
+    <!--style sheets-->
+    <link rel="stylesheet" href="../../../styles/styles.css" />
+    <link rel="stylesheet" href="../../../styles/post.css" />
+
+    <!--prism import-->
+    <script src="../../../scripts/prism.js"></script>
+    <link href="../../../styles/code.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="content">
+      <div class="header">
+        <a href="../../../index.html">
+          <img class="header-logo" src="../../../Images/Wsoft_Logo_mini.png" />
+        </a>
+        <h2 class="header-text">W25 Blog Post #3</h2>
+      </div>
+
+      <!--Content starts here-->
+      <div class="task" time="2h">Studio Meeting #6</div>
+      <p>
+        Most of this meeting was spent as a typical work time. I did spend a moment talking with the programmer working
+        on the save system to incorperate the total playtime into the saved data. Currently the plytime in the main
+        tower UI is simply displaying the Time.time value. For the following weeks before the next meeting I'd be
+        working on the Contarctor UI, with was very much aligned with the upgrade UI as well.
+      </p>
+
+      <div class="task" time="1.5h">ToolTip System</div>
+      <p>
+        The contractor doesn't have a dedicated click-to-open UI that is needed for it, like many if the other
+        buildings. The design that has been described for it uses a small tooltip to optionally either navigate to an
+        upgrade menu of itself or and upgrade menu of another building within its range. Before working on that
+        specific, a system for creating tooltips in general will be needed, as other buildings will require them in the
+        future as well.
+      </p>
+      <p>
+        The current design for the tooltips is they show up after hovering over the building for a certain amount of
+        time. Personally, I felt this might be something we will wnt to change to a right click option later, so I
+        created an option to switch how they're opened.
+      </p>
+      <p>
+        For the Tooltips themselves I created an abstract ToolTip class which stores the logic for setting the tooltip
+        at the mouse position, bounding it within the window, and closing when the mouse exits far enough.
+      </p>
+      <div class="code" href="Scripts/ToolTip.cs"></div>
+
+      <div class="task" time="2.5h">Fix UI Manager</div>
+      <p>
+        In creating the new system for tooltips, it became exceedingly obvious that the UI system was very messy and
+        difficult to work with. I rewrote a large portion of the code, introducing a way to track the main UI which was
+        open, the building which the UI references, and a formalized means of switching from one UI to another.
+      </p>
+      <div class="code" href="Scripts/UIManager.cs"></div>
+      <p>
+        To make it slightly easier to create UI windows which comply with this new system, I created a UIWindow class
+        which all the exisiting UI windows were changed to inherit from. Previously changing something withing the UI
+        system might require changing every single UI script, so this helps address that issue.
+      </p>
+      <div class="code" href="Scripts/UIWindow.cs"></div>
+
+      <div class="task" time="1h">Contractor ToolTip</div>
+      <p>
+        With all the backend UI systems out of the way, I created the tooltip design for the contractr. It was just a
+        simple panel with 3 different buttons. Some of the buttons have yet to be implemented in full, but this will
+        come in completing the upgrade UI in the coming week.
+      </p>
+      <img src="Images/Tooltip.png" />
+      <p class="caption">Image of Contractor ToolTip</p>
+
+      <div class="task" time="2h">Upgrade UI Design.</div>
+      <p>
+        The design of the Upgrade UI was much more complex than the contractor Tooltip in comparison. It was made more
+        tedious by the fact I accidentally deleted my progress after creating the layout the first time. It isn't fully
+        implemented to be able to upgrade buildings yet, but it can be supplied with a building and display the
+        information for its next upgrade.
+      </p>
+      <img src="Images/UpgradeUI.png" />
+      <p class="caption">Current progress on Upgrade UI.</p>
+
+      <div class="task-total"></div>
+    </div>
+  </body>
+</html>

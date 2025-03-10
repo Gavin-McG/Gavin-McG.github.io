@@ -18,6 +18,13 @@
                 "description": "Squash and Stretch iteractions, World map redesign, and Main Tower UI",
                 "thumbnailPath": "Images/MapRedesign.png",
                 "postFile": "post.html"
+            },
+            {
+                "postDir": "post3",
+                "date": "Feb 23 - Mar 9",
+                "description": "Contractor UI, tooltips, and upgrades",
+                "thumbnailPath": "Images/UpgradeUI.png",
+                "postFile": "post.html"
             }
         ]
     },
