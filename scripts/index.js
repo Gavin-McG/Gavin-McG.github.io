@@ -18,16 +18,15 @@ class Post extends React.Component {
         const postPath = dir+'/'+data.postDir;
 
         return (
-            <div className="post">
-                <div className="post-info">
-                    <img className="post-image" src={postPath+'/'+data.thumbnailPath} alt="Post Thumbnail" />
-                    <h2 className="post-date">{data.date}</h2>
+            <a className="post-link" href={postPath+'/'+data.postFile}>
+                <div className="post">
+                    <div className="post-info">
+                        <img className="post-image" src={postPath+'/'+data.thumbnailPath} alt="Post Thumbnail" />
+                        <h2 className="post-date">{data.date}</h2>
+                    </div>
+                    <p className="post-description">{data.description}</p>                    
                 </div>
-                <p className="post-description">{data.description}</p>
-                <a className="post-link" href={postPath+'/'+data.postFile}>
-                    Visit Post
-                </a>
-            </div>
+            </a>
         );
     }
 }
