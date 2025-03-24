@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Post</title>
+
+    <!--tab icon-->
+    <link rel="icon" href="../../../Images/favicon.ico" type="image/x-icon" />
+
+    <!-- Include React and ReactDOM via CDN -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+
+    <!-- Babel for JSX support in the browser -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Include script to load code blocks-->
+    <script type="text/babel" src="../../../scripts/code.js"></script>
+
+    <!-- Include script to format time features-->
+    <script type="text/babel" src="../../../scripts/post.js"></script>
+
+    <!--style sheets-->
+    <link rel="stylesheet" href="../../../styles/styles.css" />
+    <link rel="stylesheet" href="../../../styles/post.css" />
+
+    <!--prism import-->
+    <script src="../../../scripts/prism.js"></script>
+    <link href="../../../styles/code.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="content">
+      <div class="header">
+        <a href="../../../index.html">
+          <img class="header-logo" src="../../../Images/Wsoft_Logo_mini.png" />
+        </a>
+        <h2 class="header-text">W25 Blog Post #4</h2>
+      </div>
+
+      <!--Content starts here-->
+      <div class="task" time="3h">Contractor UI Implementation</div>
+      <p>
+        Implemeting the UI required finding all the buildigs which were accesible to a contractor. To do this I
+        searchand find all the towers within range of the contractor, then find the buildings within range of any of
+        those towers.
+      </p>
+      <p>
+        Because there are so many reason why a player might not be able to upgrade a building, it is vital to
+        communicate this well to the player. I created a mini tooltip which shows when hovering over the confirm when
+        unable to upgrade. This also required changing portions of the Upgrade system to communicate with the return
+        values why a building in not upgradeable.
+      </p>
+      <img src="Images/confirmTooltip.png" />
+
+      <div class="task" time="3h">Upgrade mode</div>
+      <p>
+        In order to highlight th buildings accesible to upgrade within the upgrade menu, I am adding a new build mode
+        for Upgrade alongside the existing Build, Delete, and None modes. Then this required adding the basic logic for
+        highlighting the buildings savedby the currently selected contrator within the preview editor and handling
+        building clicks correctly.
+      </p>
+      <p>
+        Getting the building and stats to properly upgrade on button click was simple, just requiring a function call to
+        the existing upgrade system.
+      </p>
+
+      <div class="task" time="3h">Studio Meeting #7</div>
+      <p>
+        Like normal the meeting bagan with reviewing progress of each task. I talked with members of the art department
+        about changing the current tileset for the ground to use tile rules with a formal tile set. Currently the ground
+        tiles only use the custom tile derived from the regular tile, so the current systems will not work with the
+        hexagon rule tiles. This is something I will need to fix in the future.
+      </p>
+      <p>
+        I was also told that figma allows you to copy and paste the exact design for the UI, so I will need to add the
+        polished UI design for the upgrade UI in order to call this feature complete.
+      </p>
+
+      <div class="task" time="3h">GDC</div>
+      <p>
+        Members of the studio organized a meeting to the GDC. Out trip included attending imformative talks, networking,
+        and team-building.
+      </p>
+      <img src="Images/GDC.jpg" />
+
+      <div class="task-total"></div>
+    </div>
+  </body>
+</html>
