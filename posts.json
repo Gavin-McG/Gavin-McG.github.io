@@ -32,6 +32,13 @@
                 "description": "Building Upgrades, more tooltips, and GDC",
                 "thumbnailPath": "Images/GDC.jpg",
                 "postFile": "post.html"
+            },
+            {
+                "postDir": "post5",
+                "date": "Mar 23 - Apr 6",
+                "description": "Tile rules, finishing contractor, VFX graph, and Tutorials",
+                "thumbnailPath": "Images/VFXGraph.png",
+                "postFile": "post.html"
             }
         ]
     },
