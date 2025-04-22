@@ -39,6 +39,13 @@
                 "description": "Tile rules, finishing contractor, VFX graph, and Tutorials",
                 "thumbnailPath": "Images/VFXGraph.png",
                 "postFile": "post.html"
+            },
+            {
+                "postDir": "post6",
+                "date": "Apr 6 - Apr 20 WIP",
+                "description": "Bug fixes, Bug Fixes, and Bug Fixes",
+                "thumbnailPath": "Images/VFXGraph.png",
+                "postFile": "post.html"
             }
         ]
     },
@@ -145,6 +152,13 @@
                 "postDir": "project2",
                 "date":"Gluten Gunning",
                 "description": "Rapid Prototype Toast Game",
+                "thumbnailPath": "thumbnail.png",
+                "postFile": "post.html"
+            },
+            {
+                "postDir": "project3",
+                "date":"Way of the Cards",
+                "description": "Final Project",
                 "thumbnailPath": "thumbnail.png",
                 "postFile": "post.html"
             }
